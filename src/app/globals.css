@@ -17,15 +17,13 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  @apply bg-[url('../../public/bg.jpg')] bg-cover bg-no-repeat bg-center text-[rgb(var(--foreground-rgb))];
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  ), url('/path/to/your/background-image.jpg');
 }
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
