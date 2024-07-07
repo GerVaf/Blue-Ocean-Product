@@ -2,8 +2,14 @@
 
 import { cn } from "@/utils/cn";
 import React, { useEffect, useState } from "react";
-
-export const InfiniteMovingImage = ({
+interface InfiniteMovingImageProps {
+  items: { img: string }[];
+  direction?: "left" | "right";
+  speed?: "fast" | "normal" | "slow";
+  pauseOnHover?: boolean;
+  className?: string;
+}
+export const InfiniteMovingImage: React.FC<InfiniteMovingImageProps> = ({
   items,
   direction = "left",
   speed = "fast",
@@ -91,7 +97,7 @@ export const InfiniteMovingImage = ({
             //   background:
             //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
             // }}
-            key={item}
+            key={item.img}
           >
             {/* <div
               aria-hidden="true"
@@ -100,7 +106,7 @@ export const InfiniteMovingImage = ({
             <span className=" relative z-20 text-sm text-gray-100 font-normal">
               <img
                 className="w-[350px] h-[27vh] object-contain"
-                src={item}
+                src={`${item}`}
               />
             </span>
           </li>

@@ -3,9 +3,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { InfiniteMovingImage } from "@/utils/moving_images";
 import { Button } from "@/utils/moving_border";
-
+interface Product {
+  id: number;
+  description: string;
+  img: string[];
+  price: string;
+  title: string;
+  model: string;
+  about: string;
+  note?: string;
+  include: string[];
+}
 const ProductCard = () => {
-  const productData = [
+  const productData: Product[] = [
     {
       id: 3,
       description:
@@ -165,7 +175,9 @@ const ProductCard = () => {
                 >
                   {/* inner data  */}
                   <div className="flex w-[1500px] ">
-                    <InfiniteMovingImage items={el?.img} />
+                    <InfiniteMovingImage
+                      items={el.img.map((url) => ({ img: url }))}
+                    />
                   </div>
                 </motion.div>
               </div>
