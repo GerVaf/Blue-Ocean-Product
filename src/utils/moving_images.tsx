@@ -23,7 +23,8 @@ export const InfiniteMovingImage: React.FC<InfiniteMovingImageProps> = ({
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
-}) => {
+  }) => {
+  console.log(items)
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
@@ -106,7 +107,8 @@ export const InfiniteMovingImage: React.FC<InfiniteMovingImageProps> = ({
             <span className=" relative z-20 text-sm text-gray-100 font-normal">
               <img
                 className="w-[350px] h-[27vh] object-contain"
-                src={`${item}`}
+                src={item.img.toString()}
+                alt="Display"
               />
             </span>
           </li>
