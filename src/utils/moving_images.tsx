@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/utils/cn";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingImage = ({
@@ -68,6 +67,7 @@ export const InfiniteMovingImage = ({
       }
     }
   };
+
   return (
     <div
       ref={containerRef}
@@ -91,7 +91,7 @@ export const InfiniteMovingImage = ({
             //   background:
             //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
             // }}
-            key={item.img}
+            key={item}
           >
             {/* <div
               aria-hidden="true"
@@ -100,7 +100,7 @@ export const InfiniteMovingImage = ({
             <span className=" relative z-20 text-sm text-gray-100 font-normal">
               <img
                 className="w-[350px] h-[27vh] object-contain"
-                src="/assets/prod/prod/goog1.png"
+                src={item}
               />
             </span>
           </li>

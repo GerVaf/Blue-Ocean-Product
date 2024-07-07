@@ -68,12 +68,10 @@ export default function Home() {
   return (
     <div className=" p-10 flex-col flex gap-20">
       {/* for top hero section  */}
-      <div className="md:text-5xl text-xl text-start font-normal text-neutral-500 dark:text-neutral-400">
-        <div className="">
-          WE ARE BLUE OCEAN X <br />
-          <FlipWords className="py-3" words={words} />
-        </div>
-        CHOSE YOUR PRODUCT WHAT YOU LIKE
+      <div className=" md:text-5xl flex flex-col  overflow-hidden w-[85%] mt-5 md:mt-0 text-xl text-start font-normal text-neutral-500 dark:text-neutral-400">
+        <span> WE ARE BLUE OCEAN X</span>
+        <FlipWords className="py-3" words={words} />
+        <span>CHOSE YOUR PRODUCT WHAT YOU LIKE</span>
       </div>
 
       {/* hero section  */}
@@ -87,14 +85,16 @@ export default function Home() {
         <TypewriterEffectSection words={product_section_words} />
         <ProductCard />
       </div>
-      <TypewriterEffectSection words={review_section_words} />
+      <div className="flex flex-col overflow-hidden">
+        <TypewriterEffectSection words={review_section_words} />
 
-      <div className="h-[25rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
-        <InfiniteMovingCards
-          items={testimonials}
-          direction="right"
-          speed="slow"
-        />
+        <div className="h-[25rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+          <InfiniteMovingCards
+            items={testimonials}
+            direction="right"
+            speed="slow"
+          />
+        </div>
       </div>
     </div>
   );
