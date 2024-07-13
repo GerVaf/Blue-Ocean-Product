@@ -24,7 +24,7 @@ export const InfiniteMovingImage: React.FC<InfiniteMovingImageProps> = ({
   pauseOnHover?: boolean;
   className?: string;
   }) => {
-  console.log(items)
+  // console.log(items)
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 

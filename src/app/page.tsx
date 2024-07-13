@@ -68,12 +68,13 @@ export default function Home() {
   return (
     <div className=" md:p-10 p-5 flex-col flex gap-5 md:gap-20">
       {/* for top hero section  */}
-      <div className=" md:text-5xl flex flex-col  overflow-hidden w-[85%] mt-20 md:mt-0 text-xl text-start font-normal text-neutral-500 dark:text-neutral-400">
+      <div className=" md:text-5xl flex flex-col  overflow-hidden w-[85%] mt-12 text-xl text-start font-normal text-neutral-500 dark:text-neutral-400">
         <span> WE ARE BLUE OCEAN X</span>
         <FlipWords className="py-3" words={words} />
         <span>CHOSE YOUR PRODUCT WHAT YOU LIKE</span>
       </div>
 
+      
       {/* hero section  */}
       {/* <div className="flex md:flex-row flex-col gap-20 justify-around items-center">
         <AuroraBackgroundSection />

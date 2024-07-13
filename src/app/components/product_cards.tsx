@@ -3,27 +3,92 @@ import React from "react";
 import { motion } from "framer-motion";
 import { InfiniteMovingImage } from "@/utils/moving_images";
 import { Button } from "@/utils/moving_border";
+import Accordion from "./content_for_accordion";
+
+interface ProductDetails {
+  Brand?: string;
+  ConnectivityTechnology?: string;
+  ConnectorType?: string;
+  SpecialFeature?: string;
+  Resolution?: string;
+  SupportedInternetServices?: string;
+  ControlType?: string;
+  FormFactor?: string;
+  Color?: string;
+  ModelName?: string;
+}
+
 interface Product {
   id: number;
   description: string;
   img: string[];
   price: string;
-  title: string;
   model: string;
   about: string;
   note?: string;
   include: string[];
+  details?: ProductDetails;
 }
+
+interface AccordionProps {
+  id: number;
+  data_detail?: ProductDetails | undefined; 
+}
+
 const ProductCard = () => {
   const productData: Product[] = [
+    {
+      id: 8,
+      description:
+        "NVIDIA SHIELD Android TV Pro Streaming Media Player; 4K HDR movies, live sports, Dolby Vision-Atmos, AI-enhanced upscaling, GeForce NOW cloud gaming, Google Assistant Built-In, Works with Alexa",
+      img: [
+        "/assets/prod/nvdia.jpg",
+        "/assets/prod/nvdia1.jpg",
+        "/assets/prod/nvdia2.jpg",
+      ],
+      price: "Price - $229.99",
+      details: {
+        Brand: "Brand",
+        ConnectivityTechnology: "Texh",
+        ConnectorType: "conType",
+        SpecialFeature: "specialFeature",
+        Resolution: "resolution",
+        SupportedInternetServices: "supinterservice",
+        ControlType: "controlType",
+        FormFactor: "formfactor",
+        Color: "color",
+        ModelName: "modelName",
+      },
+      model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
+      about:
+        "Chromecast with Google TV (HD) brings you the entertainment you love, including live TV, in up to 1080p HDR. Get personal recommendations based on your subscriptions, viewing history, and content you own - all in one place. No more jumping between apps to decide what to watch. And use the remote to search with your voice. ",
+      note: "2 Easily control with the Chromecast app. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.",
+      include: [
+        "Chromecast",
+        "Voice remote",
+        "Power cable",
+        "Power adapter",
+        "Save",
+      ],
+    },
     {
       id: 3,
       description:
         "Chromecast with Google TV (HD) - Streaming Stick Entertainment on Your TV with Voice Search - Watch Movies, Shows, and Live TV in 1080p HD - Snow 10K+ bought in past month $39.99",
-      img: ["/assets/prod/prod/goog1.png", "/assets/prod/prod/googl2.jpeg"],
+      img: ["/assets/prod/prod/googl1.jpeg", "/assets/prod/prod/googl2.jpeg"],
       price: "Price - $39.99",
-      title:
-        "Chromecast with Google TV (HD) - Streaming Stick Entertainment on Your TV with Voice Search - Watch Movies, Shows, and Live TV in 1080p HDR - Snow",
+      details: {
+        Brand: "Brand",
+        ConnectivityTechnology: "Texh",
+        ConnectorType: "conType",
+        SpecialFeature: "specialFeature",
+        Resolution: "resolution",
+        SupportedInternetServices: "supinterservice",
+        ControlType: "controlType",
+        FormFactor: "formfactor",
+        Color: "color",
+        ModelName: "modelName",
+      },
       model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
       about:
         "Chromecast with Google TV (HD) brings you the entertainment you love, including live TV, in up to 1080p HDR. Get personal recommendations based on your subscriptions, viewing history, and content you own - all in one place. No more jumping between apps to decide what to watch. And use the remote to search with your voice. ",
@@ -42,8 +107,18 @@ const ProductCard = () => {
         "Google Chromecast with Google TV (4K)- Streaming Stick Entertainment with Voice Search - Watch Movies, Shows, and Live TV in 4K HDR - Snow 9K+ bought in past month $59.99",
       img: ["/assets/prod/prod/goog1.png", "/assets/prod/prod/goog2.png"],
       price: "Price - $59.99",
-      title:
-        "Chromecast with Google TV (4K) - Streaming Stick Entertainment on Your TV with Voice Search - Watch Movies, Shows, and Live TV in 4K - Snow",
+      details: {
+        Brand: "Brand",
+        ConnectivityTechnology: "Texh",
+        ConnectorType: "conType",
+        SpecialFeature: "specialFeature",
+        Resolution: "resolution",
+        SupportedInternetServices: "supinterservice",
+        ControlType: "controlType",
+        FormFactor: "formfactor",
+        Color: "color",
+        ModelName: "modelName",
+      },
       model: "Model: GA01919-US SKU: 6425976 Release: 09/30/2020",
       about:
         "Chromecast with Google TV brings you the entertainment you love, in up to 4K HDR.* Get personal recommendations from your subscriptions - all in one place. No jumping between apps to decide what to watch. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.**",
@@ -55,8 +130,18 @@ const ProductCard = () => {
         "Amazon Fire TV Stick 4K with AI-powered Fire TV Search, Wi-Fi 6, stream over 1.5 million movies and shows, free & live TV $69.99",
       img: ["/assets/prod/prod/re1.jpeg", "/assets/prod/prod/ftv2.png"],
       price: "Price - $69.99",
-      title:
-        "Amazon - Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) HD streaming device | 2021 release -Black",
+      details: {
+        Brand: "Brand",
+        ConnectivityTechnology: "Texh",
+        ConnectorType: "conType",
+        SpecialFeature: "specialFeature",
+        Resolution: "resolution",
+        SupportedInternetServices: "supinterservice",
+        ControlType: "controlType",
+        FormFactor: "formfactor",
+        Color: "color",
+        ModelName: "modelName",
+      },
       model: "Model: B08C1W5N87 SKU: 6457959",
       about:
         "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
@@ -76,8 +161,18 @@ const ProductCard = () => {
         "Amazon Fire TV Stick 4K Max streaming device, supports Wi-Fi 6E, free & live TV without cable or satellite $79.99",
       img: ["/assets/prod/prod/re2.jpeg", "/assets/prod/prod/f4k2.png"],
       price: "Price - $79.99",
-      title:
-        "All-new Amazon - Fire TV Stick 4K streaming device, includes support for Wi-Fi 6, Dolby Vision/Atmos, free & live TV - Black ",
+      details: {
+        Brand: "Brand",
+        ConnectivityTechnology: "Texh",
+        ConnectorType: "conType",
+        SpecialFeature: "specialFeature",
+        Resolution: "resolution",
+        SupportedInternetServices: "supinterservice",
+        ControlType: "controlType",
+        FormFactor: "formfactor",
+        Color: "color",
+        ModelName: "modelName",
+      },
       model: "Model: BOBP9MDCQZ SKU: 6560339 Release: 09/27/2023",
       about:
         "Cinematic experience - Watch in vibrant 4K Ultra HD with support for Dolby Vision, HDR10+, and immersive Dolby Atmos audio.",
@@ -97,8 +192,18 @@ const ProductCard = () => {
         "Amazon Fire TV Cube, Hands-free streaming device with Alexa, Wi-Fi 6E, 4K Ultra HD 159.99",
       img: ["/assets/prod/cube1.jpg", "/assets/prod/cube2.jpg"],
       price: "Price - $159.99",
-      title:
-        "Amazon - Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) HD streaming device | 2021 release -Black",
+      details: {
+        Brand: "Brand",
+        ConnectivityTechnology: "Texh",
+        ConnectorType: "conType",
+        SpecialFeature: "specialFeature",
+        Resolution: "resolution",
+        SupportedInternetServices: "supinterservice",
+        ControlType: "controlType",
+        FormFactor: "formfactor",
+        Color: "color",
+        ModelName: "modelName",
+      },
       model: "Model: B08C1W5N87 SKU: 6457959",
       about:
         "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
@@ -123,8 +228,18 @@ const ProductCard = () => {
         "/assets/prod/xiamiTv4.jpg",
       ],
       price: "Price - $59.99",
-      title:
-        "Amazon - Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) HD streaming device | 2021 release -Black",
+      details: {
+        Brand: "Brand",
+        ConnectivityTechnology: "Texh",
+        ConnectorType: "conType",
+        SpecialFeature: "specialFeature",
+        Resolution: "resolution",
+        SupportedInternetServices: "supinterservice",
+        ControlType: "controlType",
+        FormFactor: "formfactor",
+        Color: "color",
+        ModelName: "modelName",
+      },
       model: "Model: B08C1W5N87 SKU: 6457959",
       about:
         "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
@@ -183,16 +298,28 @@ const ProductCard = () => {
               </div>
             </div>
             {/* description  */}
-            <div className="flex flex-col text-base gap-5 p-5">
-              <h1 className="text-xl font-bold text-black flex gap-3">
-                <Button
-                  borderRadius="1.75rem"
-                  className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-                >
-                  {el?.price}
-                </Button>
-              </h1>
-              <p className=" text-gray-800">{el?.description}</p>
+            <div className="flex flex-col text-base gap-5 p-5 justify-between ">
+              <div className="flex flex-col justify-between gap-5 h-[25vh]">
+                <p className=" text-gray-800">{el?.description}</p>
+                <div className="flex justify-around">
+                  <h1 className="text-xl font-bold text-black flex gap-3">
+                    <Button
+                      borderRadius="1.75rem"
+                      className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+                    >
+                      {el?.price}
+                    </Button>
+                  </h1>
+                  <h1 className="text-xl font-bold text-black flex gap-3">
+                    <Button
+                      borderRadius="1.75rem"
+                      className="bg-slate-100 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+                    >
+                      BUY NOW
+                    </Button>
+                  </h1>
+                </div>
+              </div>
 
               {/* <p>{el?.title}</p>
               <p>{el?.model}</p>
@@ -207,6 +334,7 @@ const ProductCard = () => {
                   return <p key={inn}>{inn}</p>;
                 })}
               </div> */}
+              <Accordion data_detail={el?.details} id={el?.id} />
             </div>
           </div>
         );
