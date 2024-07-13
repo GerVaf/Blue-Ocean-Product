@@ -49,12 +49,12 @@ const Accordion: React.FC<AccordionProps> = ({ id, data_detail }) => {
             exit={{ opacity: 0, y: "10%", transition: { duration: 0.5 } }}
           >
             <div className="grid grid-cols-2">
-              <div className="col-span-1 font-semibold grid grid-rows-1">
+              <div className="col-span-1 font-semibold grid grid-rows-1 text-[10px] md:text-base">
                 {data_detail ? (
                   Object.keys(data_detail).map((key, index) => (
                     <div
                       key={index}
-                      className="row-span-1 p-2 border bg-slate-200 text-center border-gray-400"
+                      className="row-span-1 p-2 md:px-10 border bg-slate-200  border-gray-400"
                     >
                       {key}
                     </div>
@@ -63,12 +63,12 @@ const Accordion: React.FC<AccordionProps> = ({ id, data_detail }) => {
                   <p>No details available</p>
                 )}
               </div>
-              <div className="col-span-1 grid grid-rows-1">
+              <div className="col-span-1 grid grid-rows-1 text-[10px] md:text-base">
                 {data_detail ? (
                   Object.values(data_detail).map((value, index) => (
                     <div
                       key={index}
-                      className="row-span-1 p-2 border text-center border-gray-400"
+                      className="row-span-1 p-2 md:px-10 border  border-gray-400"
                     >
                       {value || "N/A"}
                     </div>

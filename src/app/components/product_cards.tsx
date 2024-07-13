@@ -299,10 +299,10 @@ const ProductCard = () => {
             </div>
             {/* description  */}
             <div className="flex flex-col text-base gap-5 p-5 justify-between ">
-              <div className="flex flex-col justify-between gap-5 h-[25vh]">
+              <div className="flex flex-col justify-between gap-5 h-[30vh]">
                 <p className=" text-gray-800">{el?.description}</p>
-                <div className="flex justify-around">
-                  <h1 className="text-xl font-bold text-black flex gap-3">
+                <div className="flex justify-around gap-2">
+                  <h1 className="text-md md:text-xl font-bold text-black flex">
                     <Button
                       borderRadius="1.75rem"
                       className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
@@ -310,7 +310,7 @@ const ProductCard = () => {
                       {el?.price}
                     </Button>
                   </h1>
-                  <h1 className="text-xl font-bold text-black flex gap-3">
+                  <h1 className="text-md md:text-xl font-bold text-black flex">
                     <Button
                       borderRadius="1.75rem"
                       className="bg-slate-100 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
