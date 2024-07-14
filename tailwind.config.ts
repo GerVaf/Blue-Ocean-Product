@@ -75,7 +75,6 @@ function addVariablesForColors({ addBase, theme }: any) {
     ":root": {
       ...newVars,
       "background-color": "#000",
-      "background-image": "url('/bg.jpg')",
       "background-size": "cover",
       "background-repeat": "no-repeat",
     },

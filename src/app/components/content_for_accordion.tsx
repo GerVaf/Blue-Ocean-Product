@@ -36,36 +36,28 @@ const Accordion: React.FC<AccordionProps> = ({ id, data_detail }) => {
             animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
             exit={{ opacity: 0, y: "10%", transition: { duration: 0.5 } }}
           >
-            <div className="grid grid-cols-2">
-              <div className="col-span-1 font-semibold text-[10px] md:text-base border-r border-gray-400">
+            <table className="table-fixed w-full text-[10px]">
+              <tbody>
                 {data_detail ? (
-                  Object.keys(data_detail).map((key, index) => (
-                    <div
-                      key={index}
-                      className=" h-[60px] flex items-center  p-2 md:px-10 border-b border-gray-400 bg-slate-200 "
-                    >
-                      <p>{key}</p>
-                    </div>
+                  Object.entries(data_detail).map(([key, value], index) => (
+                    <tr key={index}>
+                      <td className="text-left p-2 border-b border-r bg-slate-300 font-semibold border-gray-400">
+                        {key}
+                      </td>
+                      <td className="text-left p-2 border-b border-gray-400">
+                        {value || "N/A"}
+                      </td>
+                    </tr>
                   ))
                 ) : (
-                  <p>No details available</p>
+                  <tr>
+                    <td colSpan={2} className="text-center p-2">
+                      No details available
+                    </td>
+                  </tr>
                 )}
-              </div>
-              <div className="col-span-1 text-[10px] md:text-base">
-                {data_detail ? (
-                  Object.values(data_detail).map((value, index) => (
-                    <div
-                      key={index}
-                      className=" h-[60px] flex items-center  p-2 md:px-10 border-b border-gray-400"
-                    >
-                      <p>{value || "N/A"}</p>
-                    </div>
-                  ))
-                ) : (
-                  <p>No details available</p>
-                )}
-              </div>
-            </div>
+              </tbody>
+            </table>
           </motion.div>
         )}
       </AnimatePresence>
