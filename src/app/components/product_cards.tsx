@@ -5,7 +5,7 @@ import { InfiniteMovingImage } from "@/utils/moving_images";
 import { Button } from "@/utils/moving_border";
 import Accordion from "./content_for_accordion";
 
-interface ProductDetails {
+export interface ProductDetails {
   Brand?: string;
   ConnectivityTechnology?: string;
   ConnectorType?: string;
@@ -16,6 +16,10 @@ interface ProductDetails {
   FormFactor?: string;
   Color?: string;
   ModelName?: string;
+  ItemWeight?: string;
+  ProductDimensions?: string;
+  RamMemoryInstalledSize?: string;
+  CompatibleDevices?: string;
 }
 
 interface Product {
@@ -32,7 +36,7 @@ interface Product {
 
 interface AccordionProps {
   id: number;
-  data_detail?: ProductDetails | undefined; 
+  data_detail?: ProductDetails | undefined;
 }
 
 const ProductCard = () => {
@@ -48,16 +52,19 @@ const ProductCard = () => {
       ],
       price: "Price - $229.99",
       details: {
-        Brand: "Brand",
-        ConnectivityTechnology: "Texh",
-        ConnectorType: "conType",
-        SpecialFeature: "specialFeature",
-        Resolution: "resolution",
-        SupportedInternetServices: "supinterservice",
-        ControlType: "controlType",
+        Brand: "Xiaomi",
+        ConnectivityTechnology: "Bluetooth",
+        ConnectorType: "Bluetooth",
+        SpecialFeature:
+          "Android TV 11, Google Assistant, Chromecast built-in, 4K resolution",
+        Resolution: "4k",
+        SupportedInternetServices: "Google TV",
+        ControlType: "Voice Control",
         FormFactor: "formfactor",
         Color: "color",
-        ModelName: "modelName",
+        ModelName: "chromecast,voice remote",
+        ItemWeight: "29 Grams",
+        ProductDimensions: `6.7"L x 3.6"W x 1.4"H`,
       },
       model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
       about:
@@ -78,16 +85,18 @@ const ProductCard = () => {
       img: ["/assets/prod/prod/googl1.jpeg", "/assets/prod/prod/googl2.jpeg"],
       price: "Price - $39.99",
       details: {
-        Brand: "Brand",
-        ConnectivityTechnology: "Texh",
-        ConnectorType: "conType",
-        SpecialFeature: "specialFeature",
-        Resolution: "resolution",
-        SupportedInternetServices: "supinterservice",
-        ControlType: "controlType",
-        FormFactor: "formfactor",
-        Color: "color",
-        ModelName: "modelName",
+        Brand: "Google",
+        ConnectivityTechnology: "Wireless, Bluetooth",
+        ConnectorType: "HDMI",
+        // SpecialFeature: "specialFeature",
+        Resolution: "1080p",
+        SupportedInternetServices: "Google TV",
+        ControlType: "Remote Control",
+        // FormFactor: "formfactor",
+        Color: "Snow",
+        ModelName: "chromecast",
+        ItemWeight: `56.7 Grams`,
+        ProductDimensions: `6.4"L x 2.4"W x 0.5"H`,
       },
       model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
       about:
@@ -108,22 +117,24 @@ const ProductCard = () => {
       img: ["/assets/prod/prod/goog1.png", "/assets/prod/prod/goog2.png"],
       price: "Price - $59.99",
       details: {
-        Brand: "Brand",
-        ConnectivityTechnology: "Texh",
-        ConnectorType: "conType",
-        SpecialFeature: "specialFeature",
-        Resolution: "resolution",
-        SupportedInternetServices: "supinterservice",
-        ControlType: "controlType",
-        FormFactor: "formfactor",
-        Color: "color",
-        ModelName: "modelName",
+        Brand: "Google",
+        ConnectivityTechnology: "Bluetooth, Wi-Fi",
+        ConnectorType: "HDMI",
+        SpecialFeature: "Flat",
+        Resolution: "4K",
+        SupportedInternetServices:
+          "Netflix, Hulu, Amazon Instant Video, Google TV, YouTube",
+        ControlType: "Remote Control, Voice enabled remote",
+        FormFactor: "TV Stick",
+        Color: "Snow",
+        ModelName: "chromecast",
       },
       model: "Model: GA01919-US SKU: 6425976 Release: 09/30/2020",
       about:
         "Chromecast with Google TV brings you the entertainment you love, in up to 4K HDR.* Get personal recommendations from your subscriptions - all in one place. No jumping between apps to decide what to watch. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.**",
       include: ["Chromecast", "Voice remote", "Power cable", "Power adapter"],
     },
+    // pass
     {
       id: 2,
       description:
@@ -216,7 +227,7 @@ const ProductCard = () => {
         "Quick Start Guide",
       ],
     },
-
+    //pass
     {
       id: 6,
       description:
@@ -229,16 +240,20 @@ const ProductCard = () => {
       ],
       price: "Price - $59.99",
       details: {
-        Brand: "Brand",
-        ConnectivityTechnology: "Texh",
-        ConnectorType: "conType",
-        SpecialFeature: "specialFeature",
-        Resolution: "resolution",
-        SupportedInternetServices: "supinterservice",
-        ControlType: "controlType",
-        FormFactor: "formfactor",
-        Color: "color",
-        ModelName: "modelName",
+        Brand: "Xiaomi",
+        ConnectivityTechnology: "Bluetooth, USB",
+        // ConnectorType: "conType",
+        SpecialFeature: "Compact,Portable",
+        Resolution: "4k",
+        // SupportedInternetServices: "supinterservice",
+        ControlType: "Remote Control",
+        // FormFactor: "formfactor",
+        // Color: "color",
+        ModelName: "Xiaomi Mi TV Stick 4K",
+        ItemWeight: "0.01 Pounds",
+        ProductDimensions: `1.16"L x 0.6"W x 4.2"H`,
+        RamMemoryInstalledSize: "2GB",
+        CompatibleDevices: "Television",
       },
       model: "Model: B08C1W5N87 SKU: 6457959",
       about:
@@ -299,9 +314,8 @@ const ProductCard = () => {
             </div>
             {/* description  */}
             <div className="flex flex-col text-base gap-5 p-5 justify-between ">
-              <div className="flex flex-col justify-between gap-5 h-[30vh]">
-                <p className=" text-gray-800">{el?.description}</p>
-                <div className="flex justify-around gap-2">
+              <div className="flex flex-col justify-between gap-5 md:h-[30vh] h-[50vh]">
+                <div className="flex flex-col gap-7">
                   <h1 className="text-md md:text-xl font-bold text-black flex">
                     <Button
                       borderRadius="1.75rem"
@@ -310,15 +324,14 @@ const ProductCard = () => {
                       {el?.price}
                     </Button>
                   </h1>
-                  <h1 className="text-md md:text-xl font-bold text-black flex">
-                    <Button
-                      borderRadius="1.75rem"
-                      className="bg-slate-100 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-                    >
-                      BUY NOW
-                    </Button>
-                  </h1>
+                  <p className=" text-gray-800">{el?.description}</p>
                 </div>
+
+                <h1 className="text-md md:text-xl font-bold  flex">
+                  <button className="border p-3 w-full bg-zinc-800 text-white rounded">
+                    BUY NOW
+                  </button>
+                </h1>
               </div>
 
               {/* <p>{el?.title}</p>

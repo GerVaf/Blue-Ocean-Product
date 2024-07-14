@@ -1,23 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IconArrowRight } from "@tabler/icons-react";
+import { ProductDetails } from "./product_cards";
 
 interface AccordionProps {
   id: number;
-  data_detail?:
-    | {
-        Brand?: string;
-        ConnectivityTechnology?: string;
-        ConnectorType?: string;
-        SpecialFeature?: string;
-        Resolution?: string;
-        SupportedInternetServices?: string;
-        ControlType?: string;
-        FormFactor?: string;
-        Color?: string;
-        ModelName?: string;
-      }
-    | undefined;
+  data_detail?: ProductDetails;
 }
 
 const Accordion: React.FC<AccordionProps> = ({ id, data_detail }) => {
@@ -49,28 +37,28 @@ const Accordion: React.FC<AccordionProps> = ({ id, data_detail }) => {
             exit={{ opacity: 0, y: "10%", transition: { duration: 0.5 } }}
           >
             <div className="grid grid-cols-2">
-              <div className="col-span-1 font-semibold grid grid-rows-1 text-[10px] md:text-base">
+              <div className="col-span-1 font-semibold text-[10px] md:text-base border-r border-gray-400">
                 {data_detail ? (
                   Object.keys(data_detail).map((key, index) => (
                     <div
                       key={index}
-                      className="row-span-1 p-2 md:px-10 border bg-slate-200  border-gray-400"
+                      className=" h-[60px] flex items-center  p-2 md:px-10 border-b border-gray-400 bg-slate-200 "
                     >
-                      {key}
+                      <p>{key}</p>
                     </div>
                   ))
                 ) : (
                   <p>No details available</p>
                 )}
               </div>
-              <div className="col-span-1 grid grid-rows-1 text-[10px] md:text-base">
+              <div className="col-span-1 text-[10px] md:text-base">
                 {data_detail ? (
                   Object.values(data_detail).map((value, index) => (
                     <div
                       key={index}
-                      className="row-span-1 p-2 md:px-10 border  border-gray-400"
+                      className=" h-[60px] flex items-center  p-2 md:px-10 border-b border-gray-400"
                     >
-                      {value || "N/A"}
+                      <p>{value || "N/A"}</p>
                     </div>
                   ))
                 ) : (
