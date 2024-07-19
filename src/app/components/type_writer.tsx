@@ -13,7 +13,7 @@ interface DataProps {
 export const TypewriterEffectSection: React.FC<DataProps> = ({ words }) => {
   return (
     <div className="flex flex-col items-center justify-center md:h-[20rem]  h-[10rem] ">
-      <p className="text-neutral-200 text-xs sm:text-base  ">
+      <p className="text-primary text-xs sm:text-base  ">
         The road to freedom starts from here
       </p>
       <TypewriterEffectSmooth words={words} />

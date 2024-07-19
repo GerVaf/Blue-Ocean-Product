@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { FloatingNav } from "@/utils/floating_nav";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import { IconHome, IconMessage, IconPackage, IconUser } from "@tabler/icons-react";
 
 const monster = Montserrat({
   subsets: ["latin"],
@@ -32,15 +32,22 @@ export default function RootLayout({
               ),
             },
             {
-              name: "About",
-              link: "/about",
+              name: "Return Policy",
+              link: "/return-policy",
               icon: (
                 <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />
               ),
             },
             {
-              name: "Contact",
-              link: "/contact",
+              name: "Product",
+              link: "/product",
+              icon: (
+                <IconPackage className="h-4 w-4 text-neutral-500 dark:text-white" />
+              ),
+            },
+            {
+              name: "Contact Us",
+              link: "/contact-us",
               icon: (
                 <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
               ),

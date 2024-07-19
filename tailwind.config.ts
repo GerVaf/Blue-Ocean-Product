@@ -13,6 +13,11 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        primary: "rgb(36, 36, 36)",
+        secondary: "rgb(87, 87, 87)",
+        third: "rgb(42,158,184)",
+      },
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],
       },
@@ -74,7 +79,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   addBase({
     ":root": {
       ...newVars,
-      "background-color": "#000",
+      "background-color": "#ffff",
       "background-size": "cover",
       "background-repeat": "no-repeat",
     },
