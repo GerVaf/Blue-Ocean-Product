@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { InfiniteMovingImage } from "@/utils/moving_images";
 import { Button } from "@/utils/moving_border";
 import Accordion from "./content_for_accordion";
+import { IconArrowRight } from "@tabler/icons-react";
+import Link from "next/link";
 
 export interface ProductDetails {
   Brand?: string;
@@ -23,6 +25,7 @@ export interface ProductDetails {
 }
 
 export interface Product {
+  title: string;
   id: number;
   description: string;
   img: string[];
@@ -41,6 +44,7 @@ interface AccordionProps {
 export const productData: Product[] = [
   {
     id: 8,
+    title: "NVIDIA SHIELD Android TV Pro Streaming Media Player",
     description:
       "NVIDIA SHIELD Android TV Pro Streaming Media Player; 4K HDR movies, live sports, Dolby Vision-Atmos, AI-enhanced upscaling, GeForce NOW cloud gaming, Google Assistant Built-In, Works with Alexa",
     img: [
@@ -78,6 +82,7 @@ export const productData: Product[] = [
   },
   {
     id: 3,
+    title: "Chromecast with Google TV (HD)",
     description:
       "Chromecast with Google TV (HD) - Streaming Stick Entertainment on Your TV with Voice Search - Watch Movies, Shows, and Live TV in 1080p HD - Snow 10K+ bought in past month $39.99",
     img: ["/assets/prod/prod/googl1.jpeg", "/assets/prod/prod/googl2.jpeg"],
@@ -110,6 +115,7 @@ export const productData: Product[] = [
   },
   {
     id: 1,
+    title: "Google Chromecast with Google TV (4K)",
     description:
       "Google Chromecast with Google TV (4K)- Streaming Stick Entertainment with Voice Search - Watch Movies, Shows, and Live TV in 4K HDR - Snow 9K+ bought in past month $59.99",
     img: ["/assets/prod/prod/goog1.png", "/assets/prod/prod/goog2.png"],
@@ -135,6 +141,7 @@ export const productData: Product[] = [
   // pass
   {
     id: 2,
+    title: "Amazon Fire TV Stick 4K",
     description:
       "Amazon Fire TV Stick 4K with AI-powered Fire TV Search, Wi-Fi 6, stream over 1.5 million movies and shows, free & live TV $69.99",
     img: ["/assets/prod/prod/re1.jpeg", "/assets/prod/prod/ftv2.png"],
@@ -166,6 +173,7 @@ export const productData: Product[] = [
 
   {
     id: 4,
+    title: "Amazon Fire TV Stick 4K Max",
     description:
       "Amazon Fire TV Stick 4K Max streaming device, supports Wi-Fi 6E, free & live TV without cable or satellite $79.99",
     img: ["/assets/prod/prod/re2.jpeg", "/assets/prod/prod/f4k2.png"],
@@ -197,6 +205,7 @@ export const productData: Product[] = [
 
   {
     id: 5,
+    title: "Amazon Fire TV Cube",
     description:
       "Amazon Fire TV Cube, Hands-free streaming device with Alexa, Wi-Fi 6E, 4K Ultra HD 159.99",
     img: ["/assets/prod/cube1.jpg", "/assets/prod/cube2.jpg"],
@@ -228,6 +237,7 @@ export const productData: Product[] = [
   //pass
   {
     id: 6,
+    title: "Xiaomi Mi TV Stick 4K Ultra HD",
     description:
       "Xiaomi Mi TV Stick 4K Ultra HD Streaming Device, Android TV 11 with Google Assistant Voice Remote Control Streaming Media Player, Chromecast Built-in, 2GB 8GB HDR/AV1/2.4G/5G WiFi/BT 5.2, 2022 Latest $59.99",
     img: [
@@ -287,7 +297,7 @@ const ProductCard = () => {
         return (
           <div
             key={el.id}
-            className="flex flex-col bg-white my-2 lg:col-span-1 border rounded-md overflow-hidden gap-3  shadow-md"
+            className="flex flex-col bg-white my-2 lg:col-span-1 border rounded-md overflow-hidden gap-3  shadow-lg"
           >
             {/* product img  */}
             <div
@@ -313,7 +323,7 @@ const ProductCard = () => {
             </div>
             {/* description  */}
             <div className="flex flex-col text-base gap-5 p-5 justify-between ">
-              <div className="flex flex-col justify-between gap-5 md:h-[30vh] h-[50vh]">
+              <div className="flex flex-col justify-between gap-5 md:h-[30vh] h-[400px]">
                 <div className="flex flex-col gap-7">
                   <h1 className="text-md md:text-xl font-bold text-black flex">
                     <Button
@@ -326,27 +336,24 @@ const ProductCard = () => {
                   <p className=" text-gray-800">{el?.description}</p>
                 </div>
 
-                <h1 className="text-md md:text-xl font-bold  flex">
-                  <button className="border p-3 w-full bg-zinc-800 text-white rounded">
+                <h1 className="text-md md:text-xl font-bold w-full justify-end flex">
+                  <button className="border py-3 px-5 bg-third rounded-full text-white">
                     BUY NOW
                   </button>
                 </h1>
               </div>
-
-              {/* <p>{el?.title}</p>
-              <p>{el?.model}</p>
-              <div className="flex flex-col gap-2 text-gray-800">
-                <p className="text-lg text-black">About this item</p>
-                <p>{el?.about}</p>
-                <p>{el?.note}</p>
-              </div>
-              <div className="flex flex-col gap-2 text-gray-800">
-                <p className="text-lg text-black">What is include</p>
-                {el?.include?.map((inn) => {
-                  return <p key={inn}>{inn}</p>;
-                })}
-              </div> */}
-              <Accordion data_detail={el?.details} id={el?.id} />
+              <Link
+                href={{
+                  pathname: `/product/${el.id}`,
+                  query: { id: el.id },
+                }}
+                className="p-5 mb-5 transition duration-75 flex justify-between font-semibold border text-secondary border-secondary rounded"
+              >
+                <p>Product Details</p>
+                <span>
+                  <IconArrowRight />
+                </span>
+              </Link>
             </div>
           </div>
         );

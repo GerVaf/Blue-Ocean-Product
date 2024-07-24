@@ -9,6 +9,7 @@ import "swiper/css/scrollbar";
 
 import { Product, productData } from "@/app/components/product_cards";
 import { Pagination } from "swiper/modules";
+import Accordion from "@/app/components/content_for_accordion";
 
 const ProductDetail: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -25,9 +26,9 @@ const ProductDetail: React.FC = () => {
   console.log(product);
   return (
     <div>
-      <h1>Product Details</h1>
+      {/* <h1>Product Details</h1> */}
       {product ? (
-        <div className="mt-16">
+        <div className="mt-16 mb-5 flex flex-col gap-5 ">
           {/* image slide  */}
           <div className="border rounded shadow-md">
             <Swiper
@@ -48,11 +49,15 @@ const ProductDetail: React.FC = () => {
                 ))}
             </Swiper>
           </div>
-          {/* color description  */}
-          <div className="border m-2 rounded-[35px] bg-third text-white  text-md">
-            <h1 className="text-3xl font-bold p-5 text-center">Product Description</h1>
-            <img src="/assets/description.jpg" alt="" />
-            <p className=" p-5">{product.description}</p>
+          <div className="flex flex-col mx-3 gap-5">
+            <div className="text-secondary font-bold flex flex-col gap-3 border-b border-secondary py-5">
+              <h1 className="text-[30px]">{product.title}</h1>
+              <div className="text-lg">{product.price}</div>
+            </div>
+            <div className="text-secondary">{product.description}</div>
+            <div>
+              <Accordion data_detail={product.details} />
+            </div>
           </div>
         </div>
       ) : (
