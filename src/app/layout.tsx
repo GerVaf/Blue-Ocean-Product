@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { FloatingNav } from "@/utils/floating_nav";
 import { IconHome, IconMessage, IconPackage, IconUser } from "@tabler/icons-react";
+import Footer from "./components/footer";
 
 const monster = Montserrat({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
           ]}
         />
         {children}
+        <Footer/>
       </body>
     </html>
   );
