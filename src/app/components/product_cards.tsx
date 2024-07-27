@@ -44,7 +44,7 @@ interface AccordionProps {
 export const productData: Product[] = [
   {
     id: 8,
-    title: "NVIDIA SHIELD Android TV Pro Streaming Media Player",
+    title: "NVIDIA SHIELD Android TV Pro",
     description:
       "NVIDIA SHIELD Android TV Pro Streaming Media Player; 4K HDR movies, live sports, Dolby Vision-Atmos, AI-enhanced upscaling, GeForce NOW cloud gaming, Google Assistant Built-In, Works with Alexa",
     img: [
@@ -277,6 +277,14 @@ export const productData: Product[] = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeInOut" },
+  },
+};
 const ProductCard = () => {
   const containerVariants = {
     animate: {
@@ -293,10 +301,14 @@ const ProductCard = () => {
 
   return (
     <div className=" lg:grid lg:grid-cols-3 gap-5 text-gray-800">
-      {productData?.map((el) => {
+      {productData?.map((el, index) => {
         return (
-          <div
+          <motion.div
             key={el.id}
+            initial="hidden"
+            whileInView="visible"
+            variants={cardVariants}
+            viewport={{ once: true }}
             className="flex flex-col bg-white my-2 lg:col-span-1 border rounded-md overflow-hidden gap-3  shadow-lg"
           >
             {/* product img  */}
@@ -323,7 +335,7 @@ const ProductCard = () => {
             </div>
             {/* description  */}
             <div className="flex flex-col text-base gap-5 p-5 justify-between ">
-              <div className="flex flex-col justify-between gap-5 md:h-[30vh] h-[400px]">
+              <div className="flex flex-col justify-between gap-5 md:h-[30vh] h-[350px]">
                 <div className="flex flex-col gap-7">
                   <h1 className="text-md md:text-xl font-bold text-black flex">
                     <Button
@@ -355,7 +367,7 @@ const ProductCard = () => {
                 </span>
               </Link>
             </div>
-          </div>
+          </motion.div>
         );
       })}
     </div>

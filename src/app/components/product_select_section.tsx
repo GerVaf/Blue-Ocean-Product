@@ -14,14 +14,14 @@ const ProductSelectSection = () => {
               pathname: `/product/${item.id}`,
               query: { id: item.id },
             }}
-            className=" border rounded-md shadow-lg h-[250px] gap-5 transition duration-75 hover:bg-slate-100 flex flex-col items-center col-span-1"
+            className=" border rounded-md shadow-lg h-[250px] gap-5 flex flex-col items-center col-span-1"
           >
             <img
               className=" object-contain w-full h-[150px] border-b"
               src={item.img[1]}
               alt=""
             />
-            <p className=" text-sm mx-3 text-secondary" >{item?.title}</p>
+            <p className="text-center text-sm mx-3 text-secondary" >{item?.title}</p>
           </Link>
         );
       })}

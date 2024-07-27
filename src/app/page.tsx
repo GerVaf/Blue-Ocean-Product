@@ -1,13 +1,12 @@
-import { FlipWords } from "@/utils/flip_words";
+"use client";
 import { InfiniteMovingCards } from "@/utils/moving_review_cards";
-import { AuroraBackgroundSection } from "./components/aurora_section";
-import { MeteorsSection } from "./components/meteors_section";
-import { TracingBeamSection } from "./components/tracing_beam_section";
 import { TypewriterEffectSection } from "./components/type_writer";
 import ProductCard from "./components/product_cards";
+import FlipWord from "./components/flipword";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  const words = ["PRODUCT", "BEST-SERVICE-EVER", "NEVER-REGRET"];
+  const words = ["PRODUCT", "BEST-SERVICE-EVER"];
 
   const testimonials = [
     {
@@ -65,28 +64,42 @@ export default function Home() {
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
+
+  const sectionVariants = {
+    hidden: (direction: number) => ({
+      opacity: 0,
+      x: direction > 0 ? 100 : -100,
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <div className=" md:p-10 p-5 flex-col flex gap-5 md:gap-20">
-      {/* for top hero section  */}
-      <div className=" md:text-5xl flex flex-col  overflow-hidden w-[85%] mt-12 text-xl text-start font-normal text-neutral-500 dark:text-neutral-400">
-        <span> WE ARE BLUE OCEAN X</span>
-        <FlipWords className="py-3" words={words} />
-        <span>CHOSE YOUR PRODUCT WHAT YOU LIKE</span>
-      </div>
+    <div className="md:p-10 p-5 flex-col flex gap-5 md:gap-20 overflow-hidden w-[100vw]">
+      {/* for top hero section */}
+      <FlipWord />
 
-      
-      {/* hero section  */}
-      {/* <div className="flex md:flex-row flex-col gap-20 justify-around items-center">
-        <AuroraBackgroundSection />
-        <MeteorsSection />
-      </div> */}
-
-      {/* products section  */}
+      {/* products section */}
       <div className="flex flex-col">
         <TypewriterEffectSection words={product_section_words} />
         <ProductCard />
       </div>
-      <div className="flex flex-col overflow-hidden">
+
+      {/* reviews section */}
+      <motion.div
+        className="flex flex-col overflow-hidden"
+        initial="hidden"
+        whileInView="visible"
+        variants={sectionVariants}
+        custom={-1} // negative direction for coming from the left
+        viewport={{ once: true }}
+      >
         <TypewriterEffectSection words={review_section_words} />
 
         <div className="h-[25rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
@@ -96,7 +109,7 @@ export default function Home() {
             speed="slow"
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

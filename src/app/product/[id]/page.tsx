@@ -50,7 +50,7 @@ const ProductDetail: React.FC = () => {
             </Swiper>
           </div>
           <div className="flex flex-col mx-3 gap-5">
-            <div className="text-secondary font-bold flex flex-col gap-3 border-b border-secondary py-5">
+            <div className="text-secondary font-bold flex flex-col gap-3 border-b border-gray-500 py-5">
               <h1 className="text-[30px]">{product.title}</h1>
               <div className="text-lg">{product.price}</div>
             </div>
@@ -59,6 +59,7 @@ const ProductDetail: React.FC = () => {
               <Accordion data_detail={product.details} />
             </div>
           </div>
+          <button>BUY NOW</button>
         </div>
       ) : (
         <p>No product found with this ID.</p>

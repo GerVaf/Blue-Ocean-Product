@@ -11,7 +11,7 @@ const Accordion: React.FC<AccordionProps> = ({ data_detail }) => {
       <h1 className="text-[20px] text-secondary font-semibold">
         PRODUCT DETAILS
       </h1>
-      <table className="table-fixed w-full text-[10px] border-gray-400 rounded overflow-hidden border">
+      <table className="table-fixed w-full text-[10px] border-gray-400 shadow rounded overflow-hidden border">
         <tbody>
           {data_detail ? (
             Object.entries(data_detail).map(([key, value], index) => (
@@ -19,7 +19,7 @@ const Accordion: React.FC<AccordionProps> = ({ data_detail }) => {
                 <td className="text-left p-2 border-b border-r bg-slate-300 font-semibold border-gray-400">
                   {key}
                 </td>
-                <td className="text-left p-2 border-b border-gray-400">
+                <td className="text-left p-2 border-b bg-slate-50 border-gray-400">
                   {value || "N/A"}
                 </td>
               </tr>
