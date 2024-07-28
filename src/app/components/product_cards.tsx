@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { InfiniteMovingImage } from "@/utils/moving_images";
 import { Button } from "@/utils/moving_border";
@@ -285,7 +285,35 @@ const cardVariants = {
     transition: { duration: 0.8, ease: "easeInOut" },
   },
 };
+
+const modalVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, ease: "easeInOut" },
+  },
+};
+
+const backdropVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.3, ease: "easeInOut" },
+  },
+};
+
 const ProductCard = () => {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  const openModal = (product: Product) => {
+    setSelectedProduct(product);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
+
   const containerVariants = {
     animate: {
       x: ["-40%", "0%"],
@@ -301,75 +329,99 @@ const ProductCard = () => {
 
   return (
     <div className=" lg:grid lg:grid-cols-3 gap-5 text-gray-800">
-      {productData?.map((el, index) => {
-        return (
-          <motion.div
-            key={el.id}
-            initial="hidden"
-            whileInView="visible"
-            variants={cardVariants}
-            viewport={{ once: true }}
-            className="flex flex-col bg-white my-2 lg:col-span-1 border rounded-md overflow-hidden gap-3  shadow-lg"
+      {productData?.map((el, index) => (
+        <motion.div
+          key={el.id}
+          initial="hidden"
+          whileInView="visible"
+          variants={cardVariants}
+          viewport={{ once: true }}
+          className="flex flex-col bg-white my-2 lg:col-span-1 border rounded-md overflow-hidden gap-3 shadow-lg"
+          onClick={() => openModal(el)}
+        >
+          <div
+            className="my-5 flex justify-center"
+            style={{ overflow: "hidden", whiteSpace: "nowrap" }}
           >
-            {/* product img  */}
-            <div
-              className="my-5 flex justify-center"
-              style={{ overflow: "hidden", whiteSpace: "nowrap" }}
-            >
-              <div className=" relative w-[100%] overflow-hidden">
-                <motion.div
-                  className="bg-white text-[100px] font-bold flex items-center justify-center"
-                  variants={containerVariants}
-                  initial="animate"
-                  animate="animate"
-                  style={{ display: "inline-block" }}
-                >
-                  {/* inner data  */}
-                  <div className="flex w-[1500px] ">
-                    <InfiniteMovingImage
-                      items={el.img.map((url) => ({ img: url }))}
-                    />
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-            {/* description  */}
-            <div className="flex flex-col text-base gap-5 p-5 justify-between ">
-              <div className="flex flex-col justify-between gap-5 md:h-[30vh] h-[350px]">
-                <div className="flex flex-col gap-7">
-                  <h1 className="text-md md:text-xl font-bold text-black flex">
-                    <Button
-                      borderRadius="1.75rem"
-                      className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-                    >
-                      {el?.price}
-                    </Button>
-                  </h1>
-                  <p className=" text-gray-800">{el?.description}</p>
-                </div>
-
-                <h1 className="text-md md:text-xl font-bold w-full justify-end flex">
-                  <button className="border py-3 px-5 bg-third rounded-full text-white">
-                    BUY NOW
-                  </button>
-                </h1>
-              </div>
-              <Link
-                href={{
-                  pathname: `/product/${el.id}`,
-                  query: { id: el.id },
-                }}
-                className="p-5 mb-5 transition duration-75 flex justify-between font-semibold border text-secondary border-secondary rounded"
+            <div className="relative w-[100%] overflow-hidden">
+              <motion.div
+                className="bg-white text-[100px] font-bold flex items-center justify-center"
+                variants={containerVariants}
+                initial="animate"
+                animate="animate"
+                style={{ display: "inline-block" }}
               >
-                <p>Product Details</p>
-                <span>
-                  <IconArrowRight />
-                </span>
-              </Link>
+                <div className="flex w-[1500px]">
+                  <InfiniteMovingImage
+                    items={el.img.map((url) => ({ img: url }))}
+                  />
+                </div>
+              </motion.div>
             </div>
+          </div>
+          <div className="flex flex-col text-base gap-5 p-5 justify-between ">
+            <div className="flex flex-col justify-between gap-5 md:h-[30vh] h-[350px]">
+              <div className="flex flex-col gap-7">
+                <h1 className="text-md md:text-xl font-bold text-black flex">
+                  <Button
+                    borderRadius="1.75rem"
+                    className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+                  >
+                    {el?.price}
+                  </Button>
+                </h1>
+                <p className=" text-gray-800">{el?.description}</p>
+              </div>
+              <h1 className="text-md md:text-xl font-bold w-full justify-end flex">
+                <button className="border py-3 px-5 bg-third rounded-full text-white">
+                  BUY NOW
+                </button>
+              </h1>
+            </div>
+            <Link
+              href={{
+                pathname: `/product/${el.id}`,
+                query: { id: el.id },
+              }}
+              className="p-5 mb-5 transition duration-75 flex justify-between font-semibold border text-secondary border-secondary rounded"
+            >
+              <p>Product Details</p>
+              <span>
+                <IconArrowRight />
+              </span>
+            </Link>
+          </div>
+        </motion.div>
+      ))}
+
+      {selectedProduct && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+          variants={backdropVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          onClick={closeModal}
+        >
+          <motion.div
+            className="bg-white p-5 rounded-md shadow-lg max-w-lg w-full"
+            variants={modalVariants}
+            initial="hidden"
+            animate="visible"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-xl font-bold mb-4">{selectedProduct.title}</h2>
+            <p>{selectedProduct.description}</p>
+            {/* Add more product details here */}
+            <button
+              className="mt-4 border py-2 px-4 bg-third rounded-full text-white"
+              onClick={closeModal}
+            >
+              Close
+            </button>
           </motion.div>
-        );
-      })}
+        </motion.div>
+      )}
     </div>
   );
 };
