@@ -43,45 +43,7 @@ interface AccordionProps {
 }
 export const productData: Product[] = [
   {
-    id: 8,
-    title: "NVIDIA SHIELD Android TV Pro",
-    description:
-      "NVIDIA SHIELD Android TV Pro Streaming Media Player; 4K HDR movies, live sports, Dolby Vision-Atmos, AI-enhanced upscaling, GeForce NOW cloud gaming, Google Assistant Built-In, Works with Alexa",
-    img: [
-      "/assets/prod/nvdia.jpg",
-      "/assets/prod/nvdia1.jpg",
-      "/assets/prod/nvdia2.jpg",
-    ],
-    price: "Price - $229.99",
-    details: {
-      Brand: "Xiaomi",
-      ConnectivityTechnology: "Bluetooth",
-      ConnectorType: "Bluetooth",
-      SpecialFeature:
-        "Android TV 11, Google Assistant, Chromecast built-in, 4K resolution",
-      Resolution: "4k",
-      SupportedInternetServices: "Google TV",
-      ControlType: "Voice Control",
-      FormFactor: "formfactor",
-      Color: "color",
-      ModelName: "chromecast,voice remote",
-      ItemWeight: "29 Grams",
-      ProductDimensions: `6.7"L x 3.6"W x 1.4"H`,
-    },
-    model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
-    about:
-      "Chromecast with Google TV (HD) brings you the entertainment you love, including live TV, in up to 1080p HDR. Get personal recommendations based on your subscriptions, viewing history, and content you own - all in one place. No more jumping between apps to decide what to watch. And use the remote to search with your voice. ",
-    note: "2 Easily control with the Chromecast app. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.",
-    include: [
-      "Chromecast",
-      "Voice remote",
-      "Power cable",
-      "Power adapter",
-      "Save",
-    ],
-  },
-  {
-    id: 3,
+    id: 1,
     title: "Chromecast with Google TV (HD)",
     description:
       "Chromecast with Google TV (HD) - Streaming Stick Entertainment on Your TV with Voice Search - Watch Movies, Shows, and Live TV in 1080p HD - Snow 10K+ bought in past month $39.99",
@@ -114,7 +76,7 @@ export const productData: Product[] = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     title: "Google Chromecast with Google TV (4K)",
     description:
       "Google Chromecast with Google TV (4K)- Streaming Stick Entertainment with Voice Search - Watch Movies, Shows, and Live TV in 4K HDR - Snow 9K+ bought in past month $59.99",
@@ -140,7 +102,7 @@ export const productData: Product[] = [
   },
   // pass
   {
-    id: 2,
+    id: 3,
     title: "Amazon Fire TV Stick 4K",
     description:
       "Amazon Fire TV Stick 4K with AI-powered Fire TV Search, Wi-Fi 6, stream over 1.5 million movies and shows, free & live TV $69.99",
@@ -239,7 +201,7 @@ export const productData: Product[] = [
     id: 6,
     title: "Xiaomi Mi TV Stick 4K Ultra HD",
     description:
-      "Xiaomi Mi TV Stick 4K Ultra HD Streaming Device, Android TV 11 with Google Assistant Voice Remote Control Streaming Media Player, Chromecast Built-in, 2GB 8GB HDR/AV1/2.4G/5G WiFi/BT 5.2, 2022 Latest $59.99",
+      "Xiaomi Mi TV Stick 4K Ultra HD Streaming Device, Android TV 11 with Google Assistant Voice Remote Control Streaming Media Player, Chromecast Built-in, 2GB 8GB HDR/AV1/2.4G/5G WiFi/BT 5.2, 2022 Latest.",
     img: [
       "/assets/prod/xiamiTv1.jpg",
       "/assets/prod/xiamiTv2.jpg",
@@ -273,6 +235,86 @@ export const productData: Product[] = [
       "HDMI extender",
       "2 AAA batteries",
       "Quick Start Guide",
+    ],
+  },
+
+  {
+    id: 7,
+    title: "Xiaomi TV Box S 2nd Gen - 4K Ultra HD",
+    description:
+      "Xiaomi TV Box S 2nd Gen - 4K Ultra HD Streaming Media Player, Google TV Box with 2GB RAM 8GB ROM, 2.4G/5G Dual WiFi, Bluetooth 5.2 & Dolby Audio and DTS-HD, Dolby Vision, HDR10+",
+    img: [
+      "/assets/prod/xiami_tv.jpg",
+      "/assets/prod/xiami_tv1.jpg",
+      "/assets/prod/xiami_tv2.jpg",
+      "/assets/prod/xiami_tv3.jpg",
+    ],
+    price: "Price - $79.99",
+    details: {
+      Brand: "Xiaomi",
+      ConnectivityTechnology: "Bluetooth",
+      // ConnectorType: "conType",
+      SpecialFeature: "Google TV",
+      Resolution: "4k",
+      SupportedInternetServices: "Google TV",
+      ControlType: "Remote Control, Voice Control",
+      FormFactor: "TV Box",
+      Color: "black",
+      ModelName: "Xiaomi Mi TV Stick 4K",
+      ItemWeight: "	13 Ounces",
+      ProductDimensions: `3.75"L x 3.75"W x 0.66"H`,
+      // RamMemoryInstalledSize: "2GB",
+      // CompatibleDevices: "Television",
+    },
+    model: "Model: B08C1W5N87 SKU: 6457959",
+    about:
+      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
+    include: [
+      "Fire TV Stick (3rd Gen)",
+      "Alexa Voice Remote 3rd Gen",
+      "USB cable and power adapter",
+      "HDMI extender",
+      "2 AAA batteries",
+      "Quick Start Guide",
+    ],
+  },
+
+  {
+    id: 8,
+    title: "NVIDIA SHIELD Android TV Pro",
+    description:
+      "NVIDIA SHIELD Android TV Pro Streaming Media Player; 4K HDR movies, live sports, Dolby Vision-Atmos, AI-enhanced upscaling, GeForce NOW cloud gaming, Google Assistant Built-In, Works with Alexa",
+    img: [
+      "/assets/prod/nvdia.jpg",
+      "/assets/prod/nvdia1.jpg",
+      "/assets/prod/nvdia2.jpg",
+    ],
+    price: "Price - $229.99",
+    details: {
+      Brand: "Xiaomi",
+      ConnectivityTechnology: "Bluetooth",
+      ConnectorType: "Bluetooth",
+      SpecialFeature:
+        "Android TV 11, Google Assistant, Chromecast built-in, 4K resolution",
+      Resolution: "4k",
+      SupportedInternetServices: "Google TV",
+      ControlType: "Voice Control",
+      FormFactor: "formfactor",
+      Color: "color",
+      ModelName: "chromecast,voice remote",
+      ItemWeight: "29 Grams",
+      ProductDimensions: `6.7"L x 3.6"W x 1.4"H`,
+    },
+    model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
+    about:
+      "Chromecast with Google TV (HD) brings you the entertainment you love, including live TV, in up to 1080p HDR. Get personal recommendations based on your subscriptions, viewing history, and content you own - all in one place. No more jumping between apps to decide what to watch. And use the remote to search with your voice. ",
+    note: "2 Easily control with the Chromecast app. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.",
+    include: [
+      "Chromecast",
+      "Voice remote",
+      "Power cable",
+      "Power adapter",
+      "Save",
     ],
   },
 ];
