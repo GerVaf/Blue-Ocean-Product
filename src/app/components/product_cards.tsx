@@ -457,45 +457,61 @@ const ProductCard = () => {
             {/* payment  */}
             <div className=" grid grid-cols-2 gap-5 items-center justify-center ">
               <div className="col-span-1 flex flex-col gap-3 text-secondary">
-                <div className="  w-full h-[110px] border border-slate-200 rounded shadow-lg">
+                <a
+                  href="https://gpay.app.goo.gl/pay-BViN2O0DwOU"
+                  target="_blank"
+                  className="  w-full h-[110px] border border-slate-200 rounded shadow-lg"
+                >
                   <img
                     className=" object-contain w-full h-full px-5"
                     src="/assets/pay_logo/g_pay.svg"
                     alt=""
                   />
-                </div>
+                </a>
                 <span className="text-center h-[50px] ">
                   Pay with Google Pay
                 </span>
               </div>
               <div className="col-span-1 flex flex-col gap-3 text-secondary">
-                <div className="  w-full h-[110px] border border-slate-200 rounded shadow-lg">
+                <a
+                  href="https://venmo.com/code?user_id=2886066885361664202&created=1667850678.784536&printed=1"
+                  target="_blank"
+                  className="  w-full h-[110px] border border-slate-200 rounded shadow-lg"
+                >
                   <img
                     className=" object-contain w-full h-full px-5"
                     src="/assets/pay_logo/venmo.svg"
                     alt=""
                   />
-                </div>
+                </a>
                 <span className="text-center h-[50px] ">Pay with Venmo</span>
               </div>
               <div className="col-span-1 flex flex-col gap-3 text-secondary">
-                <div className="  w-full h-[110px] border border-slate-200 rounded shadow-lg">
+                <a
+                  href="https://cash.app/$007SKY"
+                  target="_blank"
+                  className="  w-full h-[110px] border border-slate-200 rounded shadow-lg"
+                >
                   <img
                     className=" object-contain w-full h-full px-5"
                     src="/assets/pay_logo/cashapp.png"
                     alt=""
                   />
-                </div>
+                </a>
                 <span className="text-center h-[50px] ">Pay with Cash App</span>
               </div>
               <div className="col-span-1 flex flex-col gap-3 text-secondary">
-                <div className="  w-full h-[110px] border border-slate-200 rounded shadow-lg">
+                <a
+                  href="https://wa.me/17166228262?text=Hello%20let%20me%20know%20your%20credit%20number"
+                  target="_blank"
+                  className="  w-full h-[110px] border border-slate-200 rounded shadow-lg"
+                >
                   <img
                     className=" object-contain w-full h-full px-5"
                     src="/assets/pay_logo/visa.svg"
                     alt=""
                   />
-                </div>
+                </a>
                 <span className="text-center h-[50px] ">
                   Pay with Credit Card
                 </span>
