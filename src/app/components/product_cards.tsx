@@ -379,10 +379,9 @@ const ProductCard = () => {
           variants={cardVariants}
           viewport={{ once: true }}
           className="flex flex-col bg-white my-2 lg:col-span-1 border rounded-md overflow-hidden gap-3 shadow-lg"
-          onClick={() => openModal(el)}
         >
           <div
-            className="my-5 flex justify-center"
+            className="my-5 flex justify-center border-b-2"
             style={{ overflow: "hidden", whiteSpace: "nowrap" }}
           >
             <div className="relative w-[100%] overflow-hidden">
@@ -407,17 +406,18 @@ const ProductCard = () => {
                 <h1 className="text-md md:text-xl font-bold text-black flex">
                   <Button
                     borderRadius="1.75rem"
-                    className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+                    className="bg-white h-16 w-32 dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
                   >
                     {el?.price}
                   </Button>
                 </h1>
                 <p className=" text-gray-800">{el?.description}</p>
               </div>
-              <h1 className="text-md md:text-xl font-bold w-full justify-end flex">
-                <button className="border py-3 px-5 bg-third rounded-full text-white">
-                  BUY NOW
-                </button>
+              <h1
+                onClick={() => openModal(el)}
+                className=" w-full justify-end flex"
+              >
+                <button className="buy-button">BUY NOW</button>
               </h1>
             </div>
             <Link
@@ -428,7 +428,7 @@ const ProductCard = () => {
               className="p-5 mb-5 transition duration-75 flex justify-between font-semibold border text-secondary border-secondary rounded"
             >
               <p>Product Details</p>
-              <span>
+              <span className="text-center ">
                 <IconArrowRight />
               </span>
             </Link>
@@ -446,21 +446,73 @@ const ProductCard = () => {
           onClick={closeModal}
         >
           <motion.div
-            className="bg-white p-5 rounded-md shadow-lg max-w-lg w-full"
+            className="bg-white p-5 rounded-md mx-5 gap-10 flex flex-col shadow-lg max-w-lg w-full"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-xl font-bold mb-4">{selectedProduct.title}</h2>
-            <p>{selectedProduct.description}</p>
-            {/* Add more product details here */}
-            <button
-              className="mt-4 border py-2 px-4 bg-third rounded-full text-white"
-              onClick={closeModal}
-            >
-              Close
-            </button>
+            <h2 className="text-xl font-bold ">{selectedProduct.title}</h2>
+
+            {/* payment  */}
+            <div className=" grid grid-cols-2 gap-5 items-center justify-center ">
+              <div className="col-span-1 flex flex-col gap-3 text-secondary">
+                <div className="  w-full h-[110px] border border-slate-200 rounded shadow-lg">
+                  <img
+                    className=" object-contain w-full h-full px-5"
+                    src="/assets/pay_logo/g_pay.svg"
+                    alt=""
+                  />
+                </div>
+                <span className="text-center h-[50px] ">
+                  Pay with Google Pay
+                </span>
+              </div>
+              <div className="col-span-1 flex flex-col gap-3 text-secondary">
+                <div className="  w-full h-[110px] border border-slate-200 rounded shadow-lg">
+                  <img
+                    className=" object-contain w-full h-full px-5"
+                    src="/assets/pay_logo/venmo.svg"
+                    alt=""
+                  />
+                </div>
+                <span className="text-center h-[50px] ">Pay with Venmo</span>
+              </div>
+              <div className="col-span-1 flex flex-col gap-3 text-secondary">
+                <div className="  w-full h-[110px] border border-slate-200 rounded shadow-lg">
+                  <img
+                    className=" object-contain w-full h-full px-5"
+                    src="/assets/pay_logo/cashapp.png"
+                    alt=""
+                  />
+                </div>
+                <span className="text-center h-[50px] ">Pay with Cash App</span>
+              </div>
+              <div className="col-span-1 flex flex-col gap-3 text-secondary">
+                <div className="  w-full h-[110px] border border-slate-200 rounded shadow-lg">
+                  <img
+                    className=" object-contain w-full h-full px-5"
+                    src="/assets/pay_logo/visa.svg"
+                    alt=""
+                  />
+                </div>
+                <span className="text-center h-[50px] ">
+                  Pay with Credit Card
+                </span>
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center">
+              <Button
+                borderRadius="0.5rem"
+                className="bg-white h-[35px] w-[150px] self-end dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+              >
+                {selectedProduct?.price}
+              </Button>
+              <button className="buy-button" onClick={closeModal}>
+                Close
+              </button>
+            </div>
           </motion.div>
         </motion.div>
       )}

@@ -59,7 +59,7 @@ const ProductDetail: React.FC = () => {
               <Accordion data_detail={product.details} />
             </div>
           </div>
-          <button>BUY NOW</button>
+          <button className="border-y text-sm py-1 bg-third text-white self-end rounded-s-3xl px-10">BUY NOW</button>
         </div>
       ) : (
         <p>No product found with this ID.</p>

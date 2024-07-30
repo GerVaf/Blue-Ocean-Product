@@ -20,3 +20,6 @@
   }
 }
 
+.buy-button{
+  @apply border rounded-[10px] py-1 h-[35px] px-10 bg-third text-sm text-white
+}
