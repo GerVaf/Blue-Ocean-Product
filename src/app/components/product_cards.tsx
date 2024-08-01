@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { InfiniteMovingImage } from "@/utils/moving_images";
 import { Button } from "@/utils/moving_border";
-import Accordion from "./content_for_accordion";
 import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -328,7 +327,7 @@ const cardVariants = {
   },
 };
 
-const modalVariants = {
+export const modalVariants = {
   hidden: { opacity: 0, y: -50 },
   visible: {
     opacity: 1,
@@ -337,7 +336,7 @@ const modalVariants = {
   },
 };
 
-const backdropVariants = {
+export const backdropVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
