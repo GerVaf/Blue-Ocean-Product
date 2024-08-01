@@ -14,7 +14,7 @@ const ContactUs = () => {
         <div className="mt-12">
           <h2 className="text-gray-800 text-base font-bold">Email</h2>
           <ul className="mt-4">
-            <li className="flex items-center">
+            <div className="flex items-center">
               <div className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -30,13 +30,13 @@ const ContactUs = () => {
                 </svg>
               </div>
               <a
-                href="#"
+                href="mailto:info@blueboxshop.org"
                 className="text-third text-sm ml-4"
               >
                 <small className="block">Mail</small>
-                <strong>support@blueoceanshop.org</strong>
+                <strong>info@blueboxshop.org</strong>
               </a>
-            </li>
+            </div>
           </ul>
         </div>
 
@@ -93,29 +93,42 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <form className="ml-auto space-y-4">
+      <form
+        target="_blank"
+        action="https://formsubmit.co/info@blueboxshop.org"
+        method="POST"
+        className="ml-auto space-y-4"
+      >
         <input
+          required
           type="text"
           placeholder="Name"
+          name="name"
           className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
         />
         <input
+          required
           type="email"
           placeholder="Email"
+          name="email"
           className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
         />
         <input
+          required
           type="text"
           placeholder="Subject"
+          name="subject"
           className="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
         />
         <textarea
+          required
           placeholder="Message"
+          name="message"
           rows={6}
           className="w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-blue-500 focus:bg-transparent"
         ></textarea>
         <button
-          type="button"
+          type="submit"
           className="text-white bg-third tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6"
         >
           Send
