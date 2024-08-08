@@ -29,10 +29,6 @@ export interface Product {
   description: string;
   img: string[];
   price: string;
-  model: string;
-  about: string;
-  note?: string;
-  include: string[];
   details?: ProductDetails;
 }
 
@@ -62,17 +58,6 @@ export const productData: Product[] = [
       ItemWeight: `56.7 Grams`,
       ProductDimensions: `6.4"L x 2.4"W x 0.5"H`,
     },
-    model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
-    about:
-      "Chromecast with Google TV (HD) brings you the entertainment you love, including live TV, in up to 1080p HDR. Get personal recommendations based on your subscriptions, viewing history, and content you own - all in one place. No more jumping between apps to decide what to watch. And use the remote to search with your voice. ",
-    note: "2 Easily control with the Chromecast app. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.",
-    include: [
-      "Chromecast",
-      "Voice remote",
-      "Power cable",
-      "Power adapter",
-      "Save",
-    ],
   },
   {
     id: 2,
@@ -94,10 +79,6 @@ export const productData: Product[] = [
       Color: "Snow",
       ModelName: "chromecast",
     },
-    model: "Model: GA01919-US SKU: 6425976 Release: 09/30/2020",
-    about:
-      "Chromecast with Google TV brings you the entertainment you love, in up to 4K HDR.* Get personal recommendations from your subscriptions - all in one place. No jumping between apps to decide what to watch. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.**",
-    include: ["Chromecast", "Voice remote", "Power cable", "Power adapter"],
   },
   // pass
   {
@@ -119,17 +100,6 @@ export const productData: Product[] = [
       Color: "color",
       ModelName: "modelName",
     },
-    model: "Model: B08C1W5N87 SKU: 6457959",
-    about:
-      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
-    include: [
-      "Fire TV Stick (3rd Gen)",
-      "Alexa Voice Remote 3rd Gen",
-      "USB cable and power adapter",
-      "HDMI extender",
-      "2 AAA batteries",
-      "Quick Start Guide",
-    ],
   },
 
   {
@@ -151,17 +121,6 @@ export const productData: Product[] = [
       Color: "color",
       ModelName: "modelName",
     },
-    model: "Model: BOBP9MDCQZ SKU: 6560339 Release: 09/27/2023",
-    about:
-      "Cinematic experience - Watch in vibrant 4K Ultra HD with support for Dolby Vision, HDR10+, and immersive Dolby Atmos audio.",
-    include: [
-      "Fire TV 4K",
-      "Alexa Voice Remote",
-      "Power Cable",
-      "Power Adapter",
-      "HDMI Extender",
-      "Quick Start Guide",
-    ],
   },
 
   {
@@ -183,17 +142,6 @@ export const productData: Product[] = [
       Color: "color",
       ModelName: "modelName",
     },
-    model: "Model: B08C1W5N87 SKU: 6457959",
-    about:
-      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
-    include: [
-      "Fire TV Stick (3rd Gen)",
-      "Alexa Voice Remote 3rd Gen",
-      "USB cable and power adapter",
-      "HDMI extender",
-      "2 AAA batteries",
-      "Quick Start Guide",
-    ],
   },
   //pass
   {
@@ -224,17 +172,6 @@ export const productData: Product[] = [
       RamMemoryInstalledSize: "2GB",
       CompatibleDevices: "Television",
     },
-    model: "Model: B08C1W5N87 SKU: 6457959",
-    about:
-      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
-    include: [
-      "Fire TV Stick (3rd Gen)",
-      "Alexa Voice Remote 3rd Gen",
-      "USB cable and power adapter",
-      "HDMI extender",
-      "2 AAA batteries",
-      "Quick Start Guide",
-    ],
   },
 
   {
@@ -265,17 +202,6 @@ export const productData: Product[] = [
       // RamMemoryInstalledSize: "2GB",
       // CompatibleDevices: "Television",
     },
-    model: "Model: B08C1W5N87 SKU: 6457959",
-    about:
-      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
-    include: [
-      "Fire TV Stick (3rd Gen)",
-      "Alexa Voice Remote 3rd Gen",
-      "USB cable and power adapter",
-      "HDMI extender",
-      "2 AAA batteries",
-      "Quick Start Guide",
-    ],
   },
 
   {
@@ -304,17 +230,6 @@ export const productData: Product[] = [
       ItemWeight: "29 Grams",
       ProductDimensions: `6.7"L x 3.6"W x 1.4"H`,
     },
-    model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
-    about:
-      "Chromecast with Google TV (HD) brings you the entertainment you love, including live TV, in up to 1080p HDR. Get personal recommendations based on your subscriptions, viewing history, and content you own - all in one place. No more jumping between apps to decide what to watch. And use the remote to search with your voice. ",
-    note: "2 Easily control with the Chromecast app. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.",
-    include: [
-      "Chromecast",
-      "Voice remote",
-      "Power cable",
-      "Power adapter",
-      "Save",
-    ],
   },
 ];
 
