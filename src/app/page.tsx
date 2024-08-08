@@ -11,32 +11,33 @@ export default function Home() {
   const testimonials = [
     {
       quote:
-        "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-      name: "Charles Dickens",
-      title: "A Tale of Two Cities",
+        "Every purchase from Blue Ocean has been a standout experience. Their products consistently deliver exceptional quality and reliability, making them a top choice for anyone.",
+      name: "Sophia Martin",
+      title: "General Review of Blue Ocean Products",
     },
     {
       quote:
-        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-      name: "William Shakespeare",
-      title: "Hamlet",
-    },
-    {
-      quote: "All that we see or seem is but a dream within a dream.",
-      name: "Edgar Allan Poe",
-      title: "A Dream Within a Dream",
+        "Blue Ocean products have revolutionized the way I approach daily tasks with their superior design and functionality. Their commitment to excellence is evident in every item.",
+      name: "Liam Johnson",
+      title: "Endorsement of Blue Ocean's Range",
     },
     {
       quote:
-        "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-      name: "Jane Austen",
-      title: "Pride and Prejudice",
+        "Time and time again, Blue Ocean proves why they are leaders in their field. Every product they offer exemplifies innovation and quality, backed by superb customer service.",
+      name: "Ella Robertson",
+      title: "Blue Ocean Overall Satisfaction",
     },
     {
       quote:
-        "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-      name: "Herman Melville",
-      title: "Moby-Dick",
+        "Choosing Blue Ocean means choosing quality. Every product from their lineup is crafted to perfection, ensuring customer satisfaction with every use.",
+      name: "Mason Wright",
+      title: "Comprehensive Review of Blue Ocean",
+    },
+    {
+      quote:
+        "Blue Ocean stands out in a crowded market with their unparalleled product range that excels in every aspect, from performance to customer support.",
+      name: "Ava Thompson",
+      title: "Customer Experience with Blue Ocean",
     },
   ];
 
