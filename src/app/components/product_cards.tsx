@@ -8,19 +8,37 @@ import Link from "next/link";
 
 export interface ProductDetails {
   Brand?: string;
-  ConnectivityTechnology?: string;
+  Connectivity_Technology?: string;
   ConnectorType?: string;
-  SpecialFeature?: string;
+  Special_Feature?: string;
   Resolution?: string;
-  SupportedInternetServices?: string;
+  Supported_Internet_Services?: string;
   ControlType?: string;
   FormFactor?: string;
   Color?: string;
-  ModelName?: string;
-  ItemWeight?: string;
-  ProductDimensions?: string;
-  RamMemoryInstalledSize?: string;
-  CompatibleDevices?: string;
+  Model_Name?: string;
+  Item_Weight?: string;
+  Product_Dimensions?: string;
+  RamMemory_Installed_Size?: string;
+  Compatible_Devices?: string;
+  Size?: string;
+  Weight?: string;
+  Processor?: string;
+  GPU?: string;
+  Storage?: string;
+  Memory?: string;
+  Wifi?: string;
+  Bluetooth?: string;
+  Voice_Support?: string;
+  Voice_Control_Compatibility?: string;
+  Cloud_Storage?: string;
+  Ports?: string;
+  Audio_Support?: string;
+  Support?: string;
+  Content_Formats_Supported?: string;
+  Resolution_Supported?: string;
+  System_Requirements?: string;
+  Output_Resolution_Supported?: string;
 }
 
 export interface Product {
@@ -29,10 +47,9 @@ export interface Product {
   description: string;
   img: string[];
   price: string;
-  model: string;
-  about: string;
+  model?: string;
+  about?: string;
   note?: string;
-  include: string[];
   details?: ProductDetails;
 }
 
@@ -50,29 +67,18 @@ export const productData: Product[] = [
     price: "Price - $39.99",
     details: {
       Brand: "Google",
-      ConnectivityTechnology: "Wireless, Bluetooth",
+      Connectivity_Technology: "Wireless, Bluetooth",
       ConnectorType: "HDMI",
-      // SpecialFeature: "specialFeature",
+      // Special_Feature: "special_Feature",
       Resolution: "1080p",
-      SupportedInternetServices: "Google TV",
+      Supported_Internet_Services: "Google TV",
       ControlType: "Remote Control",
       // FormFactor: "formfactor",
       Color: "Snow",
-      ModelName: "chromecast",
-      ItemWeight: `56.7 Grams`,
-      ProductDimensions: `6.4"L x 2.4"W x 0.5"H`,
+      Model_Name: "chromecast",
+      Item_Weight: `56.7 Grams`,
+      Product_Dimensions: `6.4"L x 2.4"W x 0.5"H`,
     },
-    model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
-    about:
-      "Chromecast with Google TV (HD) brings you the entertainment you love, including live TV, in up to 1080p HDR. Get personal recommendations based on your subscriptions, viewing history, and content you own - all in one place. No more jumping between apps to decide what to watch. And use the remote to search with your voice. ",
-    note: "2 Easily control with the Chromecast app. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.",
-    include: [
-      "Chromecast",
-      "Voice remote",
-      "Power cable",
-      "Power adapter",
-      "Save",
-    ],
   },
   {
     id: 2,
@@ -83,21 +89,17 @@ export const productData: Product[] = [
     price: "Price - $59.99",
     details: {
       Brand: "Google",
-      ConnectivityTechnology: "Bluetooth, Wi-Fi",
+      Connectivity_Technology: "Bluetooth, Wi-Fi",
       ConnectorType: "HDMI",
-      SpecialFeature: "Flat",
+      Special_Feature: "Flat",
       Resolution: "4K",
-      SupportedInternetServices:
+      Supported_Internet_Services:
         "Netflix, Hulu, Amazon Instant Video, Google TV, YouTube",
       ControlType: "Remote Control, Voice enabled remote",
       FormFactor: "TV Stick",
       Color: "Snow",
-      ModelName: "chromecast",
+      Model_Name: "chromecast",
     },
-    model: "Model: GA01919-US SKU: 6425976 Release: 09/30/2020",
-    about:
-      "Chromecast with Google TV brings you the entertainment you love, in up to 4K HDR.* Get personal recommendations from your subscriptions - all in one place. No jumping between apps to decide what to watch. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.**",
-    include: ["Chromecast", "Voice remote", "Power cable", "Power adapter"],
   },
   // pass
   {
@@ -108,28 +110,22 @@ export const productData: Product[] = [
     img: ["/assets/prod/prod/re1.jpeg", "/assets/prod/prod/ftv2.png"],
     price: "Price - $69.99",
     details: {
-      Brand: "Brand",
-      ConnectivityTechnology: "Texh",
-      ConnectorType: "conType",
-      SpecialFeature: "specialFeature",
-      Resolution: "resolution",
-      SupportedInternetServices: "supinterservice",
-      ControlType: "controlType",
-      FormFactor: "formfactor",
-      Color: "color",
-      ModelName: "modelName",
+      Size: `99 mm x 30 mm x 14 mm (only housing) 108 mm x 30 mm x 14 mm (including the connector)`,
+      Weight: `43.5 g`,
+      Processor: `Quad-core 1.7GHz`,
+      GPU: `650MHz`,
+      Storage: `8GB`,
+      Wifi: `Wi-Fi 6 dual-band: 802.11 a/b/g/n/ac/ax (2.4GHz and 5GHz)`,
+      Bluetooth: `Bluetooth 5.2 + BLE`,
+      Voice_Support: `Yes, with the Alexa Voice Remote (included) or free Fire TV app (available for download on Fire OS, Android, and iOS) The included Alexa Voice Remote can control Fire TV Stick 4K and certain functions (such as power and volume) on a wide range of compatible IR-enabled devices, including TVs, soundbars and A/V receivers. Note: Certain functions may not be available on some IR-enabled devices.`,
+      Cloud_Storage: `Free cloud storage for digital content purchased from Amazon`,
+      Ports: `HDMI 2.1 output with ARC input support, micro USB`,
+      Audio_Support: `Dolby Atmos, 7.1 surround sound, 2-channel stereo, and HDMI audio pass through up to 5.1.`,
+      Resolution: `To watch movies and TV shows in 4K Ultra HD, you need a compatible Ultra HD TV. All services may not be available in 4K/HDR. Certain services are subject to change at any time, may not be available in all areas, or in 4K/HDR, and may require separate subscriptions. Learn more about services.`,
+      Content_Formats_Supported: `Video: Dolby Vision, HDR 10, HDR10+, HLG, H.265, H.264, VP9, AV1; Audio: xHE-AAC, AAC-LC, AAC+, eAAC+, AAC-ELD, MP3, AMR-NB, FLAC, PCM/WAV, Vorbis, Dolby AC3, eAC3 (Dolby Digital Plus), Dolby Atmos (EC3_JOC), Dolby AC4, Dolby MAT, Dolby TrueHD pass-through, MPEG-H pass-through, DTS passthrough, DTS-HD passthrough (basic profile); Photo: JPEG, PNG, GIF, BMP`,
+      Output_Resolution_Supported: `2160p, 1080p and 720p up to 60 fps`,
+      System_Requirements: `High-definition television with available high-speed HDMI input, high-speed internet connection via wifi. Wi-Fi 6 router needed for Wi-Fi 6 support. Auto-Low Latency Mode is included in the HDMI 2.1 standard.`,
     },
-    model: "Model: B08C1W5N87 SKU: 6457959",
-    about:
-      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
-    include: [
-      "Fire TV Stick (3rd Gen)",
-      "Alexa Voice Remote 3rd Gen",
-      "USB cable and power adapter",
-      "HDMI extender",
-      "2 AAA batteries",
-      "Quick Start Guide",
-    ],
   },
 
   {
@@ -140,28 +136,22 @@ export const productData: Product[] = [
     img: ["/assets/prod/prod/re2.jpeg", "/assets/prod/prod/f4k2.png"],
     price: "Price - $79.99",
     details: {
-      Brand: "Brand",
-      ConnectivityTechnology: "Texh",
-      ConnectorType: "conType",
-      SpecialFeature: "specialFeature",
-      Resolution: "resolution",
-      SupportedInternetServices: "supinterservice",
-      ControlType: "controlType",
-      FormFactor: "formfactor",
-      Color: "color",
-      ModelName: "modelName",
+      Size: `99 mm x 30 mm x 14 mm (only housing) 108 mm x 30 mm x 14 mm (including the connector)`,
+      Weight: `43.5 g`,
+      Processor: `Quad-core 2.0GHz`,
+      GPU: `850MHz`,
+      Storage: `16GB`,
+      Wifi: `Wi-Fi 6E tri-band: 802.11 a/b/g/n/ac/ax (2.4GHz, 5GHz, and 6GHz)`,
+      Bluetooth: `Bluetooth 5.2 + BLE`,
+      Voice_Support: `Yes, with the Alexa Voice Remote Enhanced (included) or free Fire TV app (available for download on Fire OS, Android, and iOS) IR device control with included Alexa Voice Remote Enhanced The included Alexa Voice Remote Enhanced can control Fire TV Stick 4K Max and certain functions (such as power and volume) on a wide range of compatible IR-enabled devices, including TVs, soundbars and A/V receivers. Note: Certain functions may not be available on some IR-enabled devices.`,
+      Cloud_Storage: `Free cloud storage for digital content purchased from Amazon`,
+      Ports: `HDMI 2.1 output with ARC input support, micro USB`,
+      Audio_Support: `Dolby Atmos, 7.1 surround sound, 2-channel stereo, and HDMI audio pass through up to 5.1.`,
+      Resolution: `To watch movies and TV shows in 4K Ultra HD, you need a compatible Ultra HD TV. All services may not be available in 4K/HDR. Certain services are subject to change at any time, may not be available in all areas, or in 4K/HDR, and may require separate subscriptions. Learn more about services.`,
+      Content_Formats_Supported: `Video: Dolby Vision, HDR 10, HDR10+, HLG, H.265, H.264, VP9, AV1; Audio: xHE-AAC, AAC-LC, AAC+, eAAC+, AAC-ELD, MP3, AMR-NB, FLAC, PCM/WAV, Vorbis, Dolby AC3, eAC3 (Dolby Digital Plus), Dolby Atmos (EC3_JOC), Dolby AC4, Dolby MAT, Dolby TrueHD pass-through, MPEG-H pass-through, DTS passthrough, DTS-HD passthrough (basic profile); Photo: JPEG, PNG, GIF, BMP`,
+      Output_Resolution_Supported: `2160p, 1080p and 720p up to 60 fps`,
+      System_Requirements: `High-definition television with available high-speed HDMI input, high-speed internet connection via wifi. Wi-Fi 6E router needed for Wi-Fi 6E support. Auto-Low Latency Mode is included in the HDMI 2.1 standard.`,
     },
-    model: "Model: BOBP9MDCQZ SKU: 6560339 Release: 09/27/2023",
-    about:
-      "Cinematic experience - Watch in vibrant 4K Ultra HD with support for Dolby Vision, HDR10+, and immersive Dolby Atmos audio.",
-    include: [
-      "Fire TV 4K",
-      "Alexa Voice Remote",
-      "Power Cable",
-      "Power Adapter",
-      "HDMI Extender",
-      "Quick Start Guide",
-    ],
   },
 
   {
@@ -172,28 +162,24 @@ export const productData: Product[] = [
     img: ["/assets/prod/cube1.jpg", "/assets/prod/cube2.jpg"],
     price: "Price - $159.99",
     details: {
-      Brand: "Brand",
-      ConnectivityTechnology: "Texh",
-      ConnectorType: "conType",
-      SpecialFeature: "specialFeature",
-      Resolution: "resolution",
-      SupportedInternetServices: "supinterservice",
-      ControlType: "controlType",
-      FormFactor: "formfactor",
-      Color: "color",
-      ModelName: "modelName",
+      Size: `3.38” x 3.38” x 2.99” (86 mm x 86 mm x 77 mm)`,
+      Weight: `513g (1.13 lbs)`,
+      Processor: `Octa-core 4x 2.2GHz 4x 2.0GHz`,
+      GPU: `800MHz`,
+      Storage: `16 GB internal`,
+      Memory: `2 GB internal`,
+      Wifi: `Wi-Fi 6E Tri-band. Also supports 802.11a/b/g/n/ac/ax wifi networks. For Wi-Fi 6E support, Fire TV Cube must be connected to the 6 GHz band of a Wi-Fi 6E network using WPA3 encryption.`,
+      Bluetooth: `Bluetooth 5.0 + LE. Pair with compatible Bluetooth speakers, headphones, video game controllers, and more.`,
+      Voice_Support: `Far-field and near-field voice support`,
+      Voice_Control_Compatibility: `Controls a wide range of IR-enabled devices, including TVs, soundbars, cable and satellite boxes, and A/V receivers.`,
+      Cloud_Storage: `Free cloud storage for digital content purchased from Amazon.`,
+      Ports: `HDMI 2.1 Input, HDMI 2.1 Output, IR Extender, Power, USB-A 2.0, Ethernet port 10/100Mbps`,
+      Audio_Support: `Dolby Atmos, 7.1 surround sound, 2-channel stereo, and HDMI audio pass through up to 5.1.`,
+      Support: `To watch movies and TV shows in 4K Ultra HD, you need a compatible 4K Ultra HD TV. All services may not be available in 4K/HDR. Certain services are subject to change at any time, may not be available in all areas, or in 4K/HDR, and may require separate subscriptions. Learn more about services.`,
+      Content_Formats_Supported: `Video: Dolby Vision, HDR 10, HDR10+, HLG, H.265, H.264, VP9, AV1, Audio: AAC-LC, AC3, eAC3 (Dolby Digital Plus), FLAC, MP3, PCM/Wave, Vorbis, Dolby Atmos (EC3_JOC), Dolby MAT, Dolby TrueHD passthrough, DTS passthrough, DTS-HD passthrough (basic profile), Photo: JPEG, PNG, GIF, BMP`,
+      Resolution_Supported: `2160p, 1080p and 720p up to 60 fps`,
+      System_Requirements: `High-definition television with available high-speed HDMI input, high-speed internet connection via wifi or built-in Ethernet port, power outlet (compatible TV/sound/cable equipment for control by infrared or voice). High-speed HDMI cable rated 18Gbps or higher, and 4K TV with high-speed HDMI connector required for 4K viewing and more reliable device control. Wi-Fi 6E router needed for Wi-Fi 6E support. Auto-Low Latency Mode is included in the HDMI 2.1 standard.`,
     },
-    model: "Model: B08C1W5N87 SKU: 6457959",
-    about:
-      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
-    include: [
-      "Fire TV Stick (3rd Gen)",
-      "Alexa Voice Remote 3rd Gen",
-      "USB cable and power adapter",
-      "HDMI extender",
-      "2 AAA batteries",
-      "Quick Start Guide",
-    ],
   },
   //pass
   {
@@ -210,31 +196,20 @@ export const productData: Product[] = [
     price: "Price - $59.99",
     details: {
       Brand: "Xiaomi",
-      ConnectivityTechnology: "Bluetooth, USB",
+      Connectivity_Technology: "Bluetooth, USB",
       // ConnectorType: "conType",
-      SpecialFeature: "Compact,Portable",
+      Special_Feature: "Compact,Portable",
       Resolution: "4k",
-      // SupportedInternetServices: "supinterservice",
+      // Supported_Internet_Services: "supinterservice",
       ControlType: "Remote Control",
       // FormFactor: "formfactor",
       // Color: "color",
-      ModelName: "Xiaomi Mi TV Stick 4K",
-      ItemWeight: "0.01 Pounds",
-      ProductDimensions: `1.16"L x 0.6"W x 4.2"H`,
-      RamMemoryInstalledSize: "2GB",
-      CompatibleDevices: "Television",
+      Model_Name: "Xiaomi Mi TV Stick 4K",
+      Item_Weight: "0.01 Pounds",
+      Product_Dimensions: `1.16"L x 0.6"W x 4.2"H`,
+      RamMemory_Installed_Size: "2GB",
+      Compatible_Devices: "Television",
     },
-    model: "Model: B08C1W5N87 SKU: 6457959",
-    about:
-      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
-    include: [
-      "Fire TV Stick (3rd Gen)",
-      "Alexa Voice Remote 3rd Gen",
-      "USB cable and power adapter",
-      "HDMI extender",
-      "2 AAA batteries",
-      "Quick Start Guide",
-    ],
   },
 
   {
@@ -251,31 +226,20 @@ export const productData: Product[] = [
     price: "Price - $79.99",
     details: {
       Brand: "Xiaomi",
-      ConnectivityTechnology: "Bluetooth",
+      Connectivity_Technology: "Bluetooth",
       // ConnectorType: "conType",
-      SpecialFeature: "Google TV",
+      Special_Feature: "Google TV",
       Resolution: "4k",
-      SupportedInternetServices: "Google TV",
+      Supported_Internet_Services: "Google TV",
       ControlType: "Remote Control, Voice Control",
       FormFactor: "TV Box",
       Color: "black",
-      ModelName: "Xiaomi Mi TV Stick 4K",
-      ItemWeight: "	13 Ounces",
-      ProductDimensions: `3.75"L x 3.75"W x 0.66"H`,
-      // RamMemoryInstalledSize: "2GB",
-      // CompatibleDevices: "Television",
+      Model_Name: "Xiaomi Mi TV Stick 4K",
+      Item_Weight: "	13 Ounces",
+      Product_Dimensions: `3.75"L x 3.75"W x 0.66"H`,
+      // RamMemory_Installed_Size: "2GB",
+      // Compatible_Devices: "Television",
     },
-    model: "Model: B08C1W5N87 SKU: 6457959",
-    about:
-      "Fire TV Stick (3rd Gen) with Alexa Voice Remote (includes TV controls) | HD streaming device | 2021 release",
-    include: [
-      "Fire TV Stick (3rd Gen)",
-      "Alexa Voice Remote 3rd Gen",
-      "USB cable and power adapter",
-      "HDMI extender",
-      "2 AAA batteries",
-      "Quick Start Guide",
-    ],
   },
 
   {
@@ -291,30 +255,19 @@ export const productData: Product[] = [
     price: "Price - $229.99",
     details: {
       Brand: "Xiaomi",
-      ConnectivityTechnology: "Bluetooth",
+      Connectivity_Technology: "Bluetooth",
       ConnectorType: "Bluetooth",
-      SpecialFeature:
+      Special_Feature:
         "Android TV 11, Google Assistant, Chromecast built-in, 4K resolution",
       Resolution: "4k",
-      SupportedInternetServices: "Google TV",
+      Supported_Internet_Services: "Google TV",
       ControlType: "Voice Control",
       FormFactor: "formfactor",
       Color: "color",
-      ModelName: "chromecast,voice remote",
-      ItemWeight: "29 Grams",
-      ProductDimensions: `6.7"L x 3.6"W x 1.4"H`,
+      Model_Name: "chromecast,voice remote",
+      Item_Weight: "29 Grams",
+      Product_Dimensions: `6.7"L x 3.6"W x 1.4"H`,
     },
-    model: "Model: GA03131-US SKU: 6517336 Release: 09/22/2022",
-    about:
-      "Chromecast with Google TV (HD) brings you the entertainment you love, including live TV, in up to 1080p HDR. Get personal recommendations based on your subscriptions, viewing history, and content you own - all in one place. No more jumping between apps to decide what to watch. And use the remote to search with your voice. ",
-    note: "2 Easily control with the Chromecast app. Watch content from Netflix, Amazon Prime Video, Disney+, YouTube, Apple TV app, Peacock, HBO Max and many more.",
-    include: [
-      "Chromecast",
-      "Voice remote",
-      "Power cable",
-      "Power adapter",
-      "Save",
-    ],
   },
 ];
 
