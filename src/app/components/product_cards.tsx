@@ -133,7 +133,7 @@ export const productData: Product[] = [
     title: "Amazon Fire TV Stick 4K Max",
     description:
       "Amazon Fire TV Stick 4K Max streaming device, supports Wi-Fi 6E, free & live TV without cable or satellite $79.99",
-    img: ["/assets/prod/prod/re2.jpeg", "/assets/prod/prod/f4k2.png"],
+    img: ["/assets/prod/ftv4k.jpg", "/assets/prod/prod/f4k2.png"],
     price: "Price - $79.99",
     details: {
       Size: `99 mm x 30 mm x 14 mm (only housing) 108 mm x 30 mm x 14 mm (including the connector)`,
