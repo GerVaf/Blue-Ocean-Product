@@ -103,32 +103,6 @@ export const productData: Product[] = [
   },
   // pass
   {
-    id: 3,
-    title: "Amazon Fire TV Stick 4K",
-    description:
-      "Amazon Fire TV Stick 4K with AI-powered Fire TV Search, Wi-Fi 6, stream over 1.5 million movies and shows, free & live TV $69.99",
-    img: ["/assets/prod/prod/re1.jpeg", "/assets/prod/prod/ftv2.png"],
-    price: "Price - $69.99",
-    details: {
-      Size: `99 mm x 30 mm x 14 mm (only housing) 108 mm x 30 mm x 14 mm (including the connector)`,
-      Weight: `43.5 g`,
-      Processor: `Quad-core 1.7GHz`,
-      GPU: `650MHz`,
-      Storage: `8GB`,
-      Wifi: `Wi-Fi 6 dual-band: 802.11 a/b/g/n/ac/ax (2.4GHz and 5GHz)`,
-      Bluetooth: `Bluetooth 5.2 + BLE`,
-      Voice_Support: `Yes, with the Alexa Voice Remote (included) or free Fire TV app (available for download on Fire OS, Android, and iOS) The included Alexa Voice Remote can control Fire TV Stick 4K and certain functions (such as power and volume) on a wide range of compatible IR-enabled devices, including TVs, soundbars and A/V receivers. Note: Certain functions may not be available on some IR-enabled devices.`,
-      Cloud_Storage: `Free cloud storage for digital content purchased from Amazon`,
-      Ports: `HDMI 2.1 output with ARC input support, micro USB`,
-      Audio_Support: `Dolby Atmos, 7.1 surround sound, 2-channel stereo, and HDMI audio pass through up to 5.1.`,
-      Resolution: `To watch movies and TV shows in 4K Ultra HD, you need a compatible Ultra HD TV. All services may not be available in 4K/HDR. Certain services are subject to change at any time, may not be available in all areas, or in 4K/HDR, and may require separate subscriptions. Learn more about services.`,
-      Content_Formats_Supported: `Video: Dolby Vision, HDR 10, HDR10+, HLG, H.265, H.264, VP9, AV1; Audio: xHE-AAC, AAC-LC, AAC+, eAAC+, AAC-ELD, MP3, AMR-NB, FLAC, PCM/WAV, Vorbis, Dolby AC3, eAC3 (Dolby Digital Plus), Dolby Atmos (EC3_JOC), Dolby AC4, Dolby MAT, Dolby TrueHD pass-through, MPEG-H pass-through, DTS passthrough, DTS-HD passthrough (basic profile); Photo: JPEG, PNG, GIF, BMP`,
-      Output_Resolution_Supported: `2160p, 1080p and 720p up to 60 fps`,
-      System_Requirements: `High-definition television with available high-speed HDMI input, high-speed internet connection via wifi. Wi-Fi 6 router needed for Wi-Fi 6 support. Auto-Low Latency Mode is included in the HDMI 2.1 standard.`,
-    },
-  },
-
-  {
     id: 4,
     title: "Amazon Fire TV Stick 4K Max",
     description:
@@ -154,6 +128,32 @@ export const productData: Product[] = [
     },
   },
 
+  {
+    id: 3,
+    title: "Amazon Fire TV Stick 4K",
+    description:
+      "Amazon Fire TV Stick 4K with AI-powered Fire TV Search, Wi-Fi 6, stream over 1.5 million movies and shows, free & live TV $69.99",
+    img: ["/assets/prod/prod/re1.jpeg", "/assets/prod/prod/ftv2.png"],
+    price: "Price - $69.99",
+    details: {
+      Size: `99 mm x 30 mm x 14 mm (only housing) 108 mm x 30 mm x 14 mm (including the connector)`,
+      Weight: `43.5 g`,
+      Processor: `Quad-core 1.7GHz`,
+      GPU: `650MHz`,
+      Storage: `8GB`,
+      Wifi: `Wi-Fi 6 dual-band: 802.11 a/b/g/n/ac/ax (2.4GHz and 5GHz)`,
+      Bluetooth: `Bluetooth 5.2 + BLE`,
+      Voice_Support: `Yes, with the Alexa Voice Remote (included) or free Fire TV app (available for download on Fire OS, Android, and iOS) The included Alexa Voice Remote can control Fire TV Stick 4K and certain functions (such as power and volume) on a wide range of compatible IR-enabled devices, including TVs, soundbars and A/V receivers. Note: Certain functions may not be available on some IR-enabled devices.`,
+      Cloud_Storage: `Free cloud storage for digital content purchased from Amazon`,
+      Ports: `HDMI 2.1 output with ARC input support, micro USB`,
+      Audio_Support: `Dolby Atmos, 7.1 surround sound, 2-channel stereo, and HDMI audio pass through up to 5.1.`,
+      Resolution: `To watch movies and TV shows in 4K Ultra HD, you need a compatible Ultra HD TV. All services may not be available in 4K/HDR. Certain services are subject to change at any time, may not be available in all areas, or in 4K/HDR, and may require separate subscriptions. Learn more about services.`,
+      Content_Formats_Supported: `Video: Dolby Vision, HDR 10, HDR10+, HLG, H.265, H.264, VP9, AV1; Audio: xHE-AAC, AAC-LC, AAC+, eAAC+, AAC-ELD, MP3, AMR-NB, FLAC, PCM/WAV, Vorbis, Dolby AC3, eAC3 (Dolby Digital Plus), Dolby Atmos (EC3_JOC), Dolby AC4, Dolby MAT, Dolby TrueHD pass-through, MPEG-H pass-through, DTS passthrough, DTS-HD passthrough (basic profile); Photo: JPEG, PNG, GIF, BMP`,
+      Output_Resolution_Supported: `2160p, 1080p and 720p up to 60 fps`,
+      System_Requirements: `High-definition television with available high-speed HDMI input, high-speed internet connection via wifi. Wi-Fi 6 router needed for Wi-Fi 6 support. Auto-Low Latency Mode is included in the HDMI 2.1 standard.`,
+    },
+  },
+  
   {
     id: 5,
     title: "Amazon Fire TV Cube",
